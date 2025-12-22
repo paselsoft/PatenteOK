@@ -5,9 +5,9 @@ const Header: React.FC = () => {
   const { toggleSidebar } = useApp();
 
   return (
-    <header className="sticky top-0 z-50 glass border-b border-slate-200/50 px-4 py-3 flex items-center justify-between shadow-sm">
+    <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/50 px-4 py-3 flex items-center justify-between shadow-sm transition-all duration-300">
       <div className="flex items-center gap-3">
-        <button 
+        <button
           onClick={toggleSidebar}
           className="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-50 text-slate-600 active:scale-90 transition-all"
         >
