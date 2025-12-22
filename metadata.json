@@ -1,0 +1,5 @@
+{
+  "name": "PatenteOK - Gestione Pratica",
+  "description": "Un'applicazione per monitorare lo stato della domanda di patente di guida, gestire i documenti e i versamenti PagoPA.",
+  "requestFramePermissions": []
+}
