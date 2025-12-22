@@ -1,16 +1,60 @@
 
 # Changelog
 
-## [2.2.2] - 2025-12-23
+## [3.1.0] - 2025-12-23
+### Feature: Documentation & Smart Validation
+Questa release trasforma l'applicazione da un semplice tracker a uno strumento di guida intelligente, integrando fonti ufficiali e regole di business proattive.
+
+### Nuove Funzionalità
+- **Materiale Informativo**:
+  - Nuova sezione "Materiale Informativo" nella Dashboard.
+  - Libreria di PDF ufficiali scaricabili (Tariffe, Requisiti psicofisici, Guide).
+  - Componente `ResourcesList` con UI a card, icone categorizzate e download diretto.
+- **Validazione Intelligente (Smart Validation)**:
+  - Sistema di regole business in real-time.
+  - **Rule #1**: Avviso automatico ("Requisito Età Non Soddisfatto") se un candidato minorenne seleziona la patente B.
+  - Componente `Alert` aggiornato con stili di avviso (Warning/Amber) e icone corrette (`material-symbols-rounded`).
+
+### Fix & Polish
+- **Icone**: Risolto un disallineamento tra font importati (`Rounded`) e classi CSS utilizzate (`Outlined`), ripristinando la corretta visualizzazione delle icone di sistema.
+- **Build**: Aggiornato `constants.ts` e i test per includere le nuove risorse e garantire il passaggio della pipeline di build.
+
+## [3.0.0] - 2025-12-22
+### Major Release: Premium UI, Router & Performance (V2 + V3)
+
+Questa major release introduce un completo redesign dell'esperienza utente, una nuova architettura di navigazione e significative ottimizazzioni delle performance.
+
+### Nuove Funzionalità (Feature)
+- **React Router Integration**:
+  - Implementato `react-router-dom` per una gestione robusta della navigazione.
+  - Introdotta la `Dashboard` come vista principale.
+  - Predisposizione per future rotte aggiuntive.
+- **Premium UI Extensions**:
+  - **Dark Mode**: Supporto nativo per la modalità scura con toggle nell'header e persistenza della preferenza utente.
+  - **Glassmorphism**: Nuovo stile visivo per l'header con effetto blur e trasparenza (`backdrop-blur-xl`).
+  - **Animazioni**: Transizioni di pagina fluide e animazioni di espansione liste tramite `framer-motion`.
+  - **Confetti Celebration**: Effetto celebrativo al completamento del 100% dei documenti.
+- **Enhanced Design System**:
+  - Nuova palette colori vibrante e ombreggiature "float".
+  - Componenti UI riutilizzabili: `PageTransition`, `ScrollArea`, `Confetti`.
+
+### Ottimizzazioni (Performance & Fix)
+- **AppContext Performance**:
+  - Risolto un critical bug di re-rendering infinito ("Maximum update depth exceeded").
+  - Ottimizzata la logica di aggiornamento della `documentList` per prevenire cicli inutili.
+- **DevOps & CI**:
+  - Implementata pipeline GitHub Actions (`ci.yml`) per Continuous Integration su ogni push.
+
+## [2.2.2] - 2025-12-22
 ### Refactoring & Fix
 - **Configurazione**: Estratta la configurazione di ESLint e Prettier dal `package.json` in file dedicati (`.eslintrc.cjs` e `.prettierrc`) per una maggiore pulizia e standardizzazione del progetto.
 
-## [2.2.1] - 2025-12-23
+## [2.2.1] - 2025-12-22
 ### UI & Configurazione
 - **Categorie Patente**: Ripristinato l'elenco completo delle categorie (AM, A, B, C, D, CAP) raggruppate per tipologia nel menu a tendina.
 - **UI Polish**: Ridotta ulteriormente la dimensione dei checkbox nella checklist documenti (da 24px a 20px) per una migliore armonia visiva.
 
-## [2.2.0] - 2025-12-23
+## [2.2.0] - 2025-12-22
 ### Engineering & Polish (Fase 6 - Production Ready)
 - **CI/CD Pipeline**: 
   - Aggiunto workflow GitHub Actions (`ci.yml`) per eseguire build, linting e test automaticamente ad ogni push/PR.

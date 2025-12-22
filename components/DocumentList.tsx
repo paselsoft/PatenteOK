@@ -20,7 +20,7 @@ const DocumentList: React.FC = () => {
         return (
           <div
             key={doc.id}
-            className={`bg-white rounded-3xl border border-slate-200 card-shadow transition-all ${isExpanded ? 'ring-2 ring-primary ring-inset' : ''}`}
+            className={`bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 card-shadow transition-all ${isExpanded ? 'ring-2 ring-primary dark:ring-blue-500 ring-inset' : ''}`}
           >
             <div
               className="p-5 flex items-center gap-4 cursor-pointer"
@@ -29,14 +29,14 @@ const DocumentList: React.FC = () => {
               {/* Check indicator ridimensionato a w-5 h-5 (20px) */}
               <button
                 onClick={(e) => handleToggle(doc.id, e)}
-                className={`w-5 h-5 rounded-full border-2 flex items-center justify-center transition-all flex-shrink-0 ${doc.completed ? 'bg-primary border-primary text-white' : 'bg-white border-slate-300 text-transparent'
+                className={`w-5 h-5 rounded-full border-2 flex items-center justify-center transition-all flex-shrink-0 ${doc.completed ? 'bg-primary dark:bg-blue-600 border-primary dark:border-blue-600 text-white' : 'bg-white dark:bg-slate-800 border-slate-300 dark:border-slate-600 text-transparent'
                   }`}
               >
                 <span className="material-symbols-rounded font-black text-xs">check</span>
               </button>
 
               <div className="flex-1 min-w-0">
-                <h4 className={`text-[15px] font-black tracking-tight ${doc.completed ? 'text-slate-400' : 'text-slate-800'}`}>
+                <h4 className={`text-[15px] font-black tracking-tight ${doc.completed ? 'text-slate-400 dark:text-slate-500' : 'text-slate-800 dark:text-slate-100'}`}>
                   {doc.title}
                 </h4>
                 <p className="text-[13px] text-slate-500 font-medium">{doc.subtitle}</p>

@@ -1,5 +1,5 @@
 
-import React from 'react';
+
 import { render } from '@testing-library/react';
 import { Button } from '../../../components/ui/Button';
 import { describe, it, expect, vi } from 'vitest';
@@ -13,10 +13,10 @@ describe('Button Component', () => {
   it('gestisce il click', () => {
     const handleClick = vi.fn();
     const { getByText } = render(<Button onClick={handleClick}>Click me</Button>);
-    
+
     // Usa il metodo nativo click() per evitare problemi di import
     getByText('Click me').click();
-    
+
     expect(handleClick).toHaveBeenCalledTimes(1);
   });
 

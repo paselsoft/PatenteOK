@@ -37,12 +37,12 @@ export const Alert: React.FC<AlertProps> = ({ variant = 'info', title, children,
   const style = variants[variant];
 
   return (
-    <div 
+    <div
       className={`border rounded-lg p-3 flex gap-3 shadow-sm ${style.container} ${className}`}
       role="alert"
       aria-live="polite"
     >
-      <span className={`material-symbols-outlined shrink-0 text-[20px] mt-0.5 ${style.iconColor}`} aria-hidden="true">
+      <span className={`material-symbols-rounded shrink-0 text-[20px] mt-0.5 ${style.iconColor}`} aria-hidden="true">
         {style.icon}
       </span>
       <div className="flex flex-col gap-0.5 text-[13px] leading-relaxed">

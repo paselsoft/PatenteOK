@@ -2,13 +2,13 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { DocumentItem, ProfileInfo, CITIZENSHIP, LICENSE_CATEGORIES } from '../types';
 import { useLocalStorage } from '../hooks/useLocalStorage';
-import { 
-  DOCUMENT_IDS, 
-  INITIAL_DOCUMENTS, 
-  DELEGA_DOC_ITEM, 
-  EXTRA_UE_DOC_ITEM, 
-  UE_DOC_ITEM, 
-  MINOR_GUIDE_ITEM 
+import {
+  DOCUMENT_IDS,
+  INITIAL_DOCUMENTS,
+  DELEGA_DOC_ITEM,
+  EXTRA_UE_DOC_ITEM,
+  UE_DOC_ITEM,
+  MINOR_GUIDE_ITEM
 } from '../constants';
 
 interface AppContextType {
@@ -44,44 +44,51 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   // Logica Dinamica: Aggiorna la lista documenti in base al profilo
   useEffect(() => {
     setDocuments(prevDocs => {
-      const completionMap = new Map(prevDocs.map(d => [d.id, d.completed]));
-      let newDocs = [...INITIAL_DOCUMENTS];
+      // 1. Calcola la struttura documenti attesa basata sul profilo
+      let expectedDocs = [...INITIAL_DOCUMENTS];
 
-      // 1. Gestione Cittadinanza
-      const idDocIndex = newDocs.findIndex(d => d.id === DOCUMENT_IDS.IDENTITY_DOCS);
-      
+      const idDocIndex = expectedDocs.findIndex(d => d.id === DOCUMENT_IDS.IDENTITY_DOCS);
+
       if (profile.citizenship === CITIZENSHIP.EXTRA_EU) {
-        if (idDocIndex !== -1) newDocs.splice(idDocIndex, 0, EXTRA_UE_DOC_ITEM);
+        if (idDocIndex !== -1) expectedDocs.splice(idDocIndex, 0, EXTRA_UE_DOC_ITEM);
       } else if (profile.citizenship === CITIZENSHIP.EU) {
-        if (idDocIndex !== -1) newDocs.splice(idDocIndex, 0, UE_DOC_ITEM);
+        if (idDocIndex !== -1) expectedDocs.splice(idDocIndex, 0, UE_DOC_ITEM);
       }
 
-      // 2. Gestione Minorenni
       if (profile.isMinor) {
-        const currentIdDocIndex = newDocs.findIndex(d => d.id === DOCUMENT_IDS.IDENTITY_DOCS);
-        if (currentIdDocIndex !== -1) newDocs.splice(currentIdDocIndex, 0, MINOR_GUIDE_ITEM);
+        const currentIdDocIndex = expectedDocs.findIndex(d => d.id === DOCUMENT_IDS.IDENTITY_DOCS);
+        if (currentIdDocIndex !== -1) expectedDocs.splice(currentIdDocIndex, 0, MINOR_GUIDE_ITEM);
       }
 
-      // 3. Gestione Delega
       if (profile.isDelegated) {
-        const currentIdDocIndex = newDocs.findIndex(d => d.id === DOCUMENT_IDS.IDENTITY_DOCS);
-        if (currentIdDocIndex !== -1) newDocs.splice(currentIdDocIndex, 0, DELEGA_DOC_ITEM);
+        const currentIdDocIndex = expectedDocs.findIndex(d => d.id === DOCUMENT_IDS.IDENTITY_DOCS);
+        if (currentIdDocIndex !== -1) expectedDocs.splice(currentIdDocIndex, 0, DELEGA_DOC_ITEM);
       }
 
-      // 4. Ripristino stato completed
-      return newDocs.map(doc => ({
+      // 2. Mappa lo stato di completamento attuale
+      const completionMap = new Map(prevDocs.map(d => [d.id, d.completed]));
+
+      // 3. Crea la nuova lista preservando i completamenti
+      const nextDocs = expectedDocs.map(doc => ({
         ...doc,
         completed: completionMap.has(doc.id) ? completionMap.get(doc.id)! : false
       }));
+
+      // 4. Optimization Check: Aggiorna SOLO se la lista è cambiata (evita loop)
+      const hasChanged =
+        prevDocs.length !== nextDocs.length ||
+        prevDocs.some((doc, index) => doc.id !== nextDocs[index].id);
+
+      return hasChanged ? nextDocs : prevDocs;
     });
-  }, [profile.isDelegated, profile.citizenship, profile.isMinor, setDocuments]);
+  }, [profile.citizenship, profile.isMinor, profile.isDelegated, setDocuments]);
 
   const updateProfile = (updates: Partial<ProfileInfo>) => {
     setProfile(prev => ({ ...prev, ...updates }));
   };
 
   const toggleDocument = (id: string) => {
-    setDocuments(prev => prev.map(doc => 
+    setDocuments(prev => prev.map(doc =>
       doc.id === id ? { ...doc, completed: !doc.completed } : doc
     ));
   };
@@ -93,11 +100,11 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   const isReadyToSubmit = documents.every(d => d.completed);
 
   return (
-    <AppContext.Provider value={{ 
-      profile, 
-      updateProfile, 
-      documents, 
-      toggleDocument, 
+    <AppContext.Provider value={{
+      profile,
+      updateProfile,
+      documents,
+      toggleDocument,
       simulatePayment,
       isReadyToSubmit,
       isSidebarOpen,

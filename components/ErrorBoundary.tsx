@@ -1,5 +1,5 @@
 
-import React, { Component, ErrorInfo, ReactNode } from 'react';
+import { Component, ErrorInfo, ReactNode } from 'react';
 import { logError } from '../services/errorLogging';
 
 interface Props {
@@ -22,7 +22,7 @@ export class ErrorBoundary extends Component<Props, State> {
 
   public componentDidCatch(error: Error, errorInfo: ErrorInfo) {
     // Utilizza il servizio centralizzato
-    logError(error, { componentStack: errorInfo.componentStack });
+    logError(error, { componentStack: errorInfo.componentStack || undefined });
   }
 
   public render() {

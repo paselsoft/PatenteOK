@@ -5,21 +5,31 @@ PatenteOK è un'applicazione web moderna e intuitiva progettata per aiutare gli 
 
 ## Funzionalità Principali
 
-- **Checklist Documenti**: Monitoraggio in tempo reale dello stato dei documenti necessari (TT2112, Certificato Medico, etc.).
-- **Gestione PagoPA**: Integrazione simulata per il pagamento delle tariffe ministeriali con generazione automatica dello stato.
-- **Configurazione Profilo**: Gestione dinamica della cittadinanza e della categoria di patente richiesta, con avvisi specifici per i candidati minorenni.
+- **Checklist Intelligente**: Monitoraggio in tempo reale dello stato dei documenti necessari (TT2112, Certificato Medico, etc.) con aggiornamenti automatici basati sul profilo (Cittadinanza, Età).
+- **Esperienza Utente Premium**:
+  - **Dark Mode**: Supporto completo per tema chiaro e scuro.
+  - **Animazioni Fluide**: Transizioni di pagina e feedback visivi interattivi.
+  - **Confetti Celebration**: Festeggiamenti al completamento di tutti i requisiti!
+- **Gestione Profilo**: Configurazione dinamica per cittadini UE/Extra-UE e minorenni.
+- **Materiale Informativo**: Accesso diretto e scaricabile alla documentazione ufficiale (Tariffe, Circolari, Guide).
+- **Validazione Intelligente**: Sistema proattivo di avvisi basato sui regolamenti ufficiali (es. verifica età per categorie di patente).
 - **Info Ufficio**: Dettagli sulla motorizzazione di riferimento e codice autoscuola.
 - **Generazione Domanda**: Pulsante d'azione per finalizzare la pratica una volta completati i requisiti obbligatori.
 
 ## Tecnologie Utilizzate
 
-- **React 19**: Core framework per la logica dell'interfaccia.
-- **Tailwind CSS**: Framework per lo styling responsive e utility-first.
-- **Google Fonts & Material Symbols**: Per tipografia e icone moderne.
-- **TypeScript**: Per garantire la robustezza del codice e la tipizzazione dei dati.
+- **React 19**: Core framework.
+- **React Router**: Gestione della navigazione client-side.
+- **Tailwind CSS**: Styling responsive e design system (inclusa Dark Mode).
+- **Framer Motion**: Libreria per animazioni complesse e transizioni di pagina.
+- **TypeScript**: Per garantire robustezza e type safety.
+- **Vite**: Build tool e dev server ultra-veloce.
+- **Vitest**: Framework di testing unitario e di integrazione.
+- **GitHub Actions**: Pipeline CI per test e code quality automatici.
 
 ## Installazione e Sviluppo
 
-1. Assicurati di avere un ambiente di sviluppo compatibile con React.
-2. I file principali si trovano nella radice (`App.tsx`, `index.tsx`, etc.).
-3. L'app utilizza ESM modules caricati via CDN per una portabilità estrema.
+1. Clona il repository.
+2. Esegui `npm install` per scaricare le dipendenze.
+3. Esegui `npm run dev` per avviare il server di sviluppo locale.
+4. Esegui `npm test` per lanciare la suite di test automatizzati.

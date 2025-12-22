@@ -84,3 +84,62 @@ export const MINOR_GUIDE_ITEM: DocumentItem = {
   expandable: true,
   required: true,
 };
+
+export const RESOURCES = [
+  {
+    id: 'costs',
+    title: 'Tariffe Motorizzazione',
+    filename: '022 - Tariffe per operazioni in materia di motorizzazione.pdf',
+    category: 'Amministrativo',
+    icon: 'payments'
+  },
+  {
+    id: 'drivers',
+    title: 'Conducenti e Documenti',
+    filename: '400 - Conducenti di veicoli e documenti di guida.pdf',
+    category: 'Normativa',
+    icon: 'badge'
+  },
+  {
+    id: 'psychophysical',
+    title: 'Requisiti Psicofisici',
+    filename: '411 - Requisiti psicofisici per patente, CQC, CAP.pdf',
+    category: 'Medico',
+    icon: 'medical_services'
+  },
+  {
+    id: 'medical_check',
+    title: 'Accertamento Requisiti',
+    filename: '412 - Accertamento requisiti psicofisici per patenti di guida e CQC.pdf',
+    category: 'Medico',
+    icon: 'health_and_safety'
+  },
+  {
+    id: 'application',
+    title: 'Domande e Documentazione',
+    filename: '420 - Domande e documentazione per la patente di guida.pdf',
+    category: 'Amministrativo',
+    icon: 'folder_open'
+  },
+  {
+    id: 'exams_general',
+    title: 'Esami Patente (Generale)',
+    filename: '423 - Esami patenti in generale.pdf',
+    category: 'Esami',
+    icon: 'school'
+  },
+  {
+    id: 'theory_exam',
+    title: 'Esame di Teoria',
+    filename: '424 - Esame teoria patente (prova di controllo delle cognizioni).pdf',
+    category: 'Esami',
+    icon: 'menu_book'
+  },
+  {
+    id: 'circular',
+    title: 'Circolare Documentazione',
+    filename: 'Circolare - 05072001 - 1254M352 - Documentazione amministrativa.pdf',
+    category: 'Normativa',
+    icon: 'gavel'
+  }
+] as const;
