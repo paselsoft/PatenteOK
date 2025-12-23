@@ -52,4 +52,10 @@ src/
 1. Clona il repository.
 2. Esegui `npm install` per scaricare le dipendenze.
 3. Esegui `npm run dev` per avviare il server di sviluppo locale.
-4. Esegui `npm test` per lanciare la suite di test automatizzati.
+
+## Deployment & CI/CD
+
+Questo progetto è configurato per il **Deploy Continuo** tramite **Vercel**:
+- Ogni `git push` sul branch `main` innesca automaticamente una nuova build su Vercel.
+- L'URL di produzione è: **[patente-ok.vercel.app](https://patente-ok.vercel.app/)**
+- GitHub Actions si occupa di eseguire i test automatici prima di ogni merge.
