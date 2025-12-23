@@ -12,6 +12,10 @@ PatenteOK è un'applicazione web moderna e intuitiva progettata per aiutare gli 
   - **Confetti Celebration**: Festeggiamenti al completamento di tutti i requisiti!
 - **Gestione Profilo**: Configurazione dinamica per cittadini UE/Extra-UE e minorenni.
 - **Materiale Informativo**: Accesso diretto e scaricabile alla documentazione ufficiale (Tariffe, Circolari, Guide).
+- **Navigazione Multipiattaforma**:
+  - **Sidebar Moderna**: Menu laterale ridisegnato con icone arrotondate e stile premium.
+  - **Bottom Bar (Mobile)**: Barra di navigazione inferiore stile App per un accesso rapido alle sezioni principali su smartphone.
+  - **Logo Cliccabile**: Ritorno immediato alla Home.
 - **Validazione Dinamica**: Sistema che legge i regolamenti dai file markdown ufficiali per applicare in tempo reale i limiti di età e mostrare avvisi contestuali.
 - **Info Ufficio**: Dettagli sulla motorizzazione di riferimento e codice autoscuola.
 - **Generazione Domanda**: Pulsante d'azione per finalizzare la pratica una volta completati i requisiti obbligatori.
@@ -26,6 +30,20 @@ PatenteOK è un'applicazione web moderna e intuitiva progettata per aiutare gli 
 - **Vite**: Build tool e dev server ultra-veloce.
 - **Vitest**: Framework di testing unitario e di integrazione.
 - **GitHub Actions**: Pipeline CI per test e code quality automatici.
+
+## Struttura del Progetto
+
+Il progetto segue una struttura moderna basata su `src/`:
+
+```
+src/
+├── components/   # Componenti UI riutilizzabili (Button, Sidebar, BottomNav...)
+├── context/      # Gestione stato globale (AppContext, ToastContext)
+├── hooks/        # Custom React Hooks (useLocalStorage, useLicenseRules)
+├── pages/        # Componenti Pagina per il routing (HomePage, DocumentsPage...)
+├── services/     # Logica di business e fetch dati
+└── utils/        # Utility functions
+```
 
 ## Installazione e Sviluppo
 

@@ -9,8 +9,8 @@ export default defineConfig({
     coverage: {
       provider: 'v8',
       reporter: ['text', 'html', 'json-summary'],
-      include: ['components/**/*.{ts,tsx}', 'context/**/*.{ts,tsx}', 'hooks/**/*.{ts,tsx}'],
-      exclude: ['node_modules/', 'tests/', '.eslintrc.cjs', 'tailwind.config.js', 'postcss.config.js', 'components/ui/icons/**'],
+      include: ['src/**/*.{test,spec}.{ts,tsx}', 'tests/**/*.{test,spec}.{ts,tsx}'],
+      exclude: ['node_modules/', 'dist/', '.idea/', '.git/', '.cache/'],
     },
   },
 });

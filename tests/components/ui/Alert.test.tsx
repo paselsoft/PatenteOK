@@ -1,7 +1,7 @@
 
 
 import { render } from '@testing-library/react';
-import { Alert } from '../../../components/ui/Alert';
+import { Alert } from '../../../src/components/ui/Alert';
 import { describe, it, expect } from 'vitest';
 
 describe('Alert Component', () => {

@@ -1,6 +1,33 @@
 
 # Changelog
 
+## [2.3.0] - 2025-12-23
+### Major Refactoring & Navigation
+Questa release introduce un routing reale multipagina e una struttura del progetto moderna e production-ready.
+
+### Breaking Changes (Structural)
+- **Refactoring Architetturale**: Tutto il codice sorgente è stato migrato in `src/` (`src/components`, `src/pages`, `src/context`, etc.) per conformità agli standard React/Vite.
+- **Routing**: Abbandonata la navigazione "scroll-to-section" in favore di un vero routing client-side con `react-router-dom`:
+  - `/`: Home Page (Dashboard).
+  - `/profile`: Pagina dedicata alla configurazione pratica.
+  - `/documents`: Pagina per la gestione della checklist.
+  - `/office`: Informazioni ufficio.
+
+### Nuove Funzionalità
+- **Bottom Navigation (Mobile)**:
+  - Nuova barra di navigazione inferiore in stile app nativa per dispositivi mobili (visibile < 768px).
+  - Accesso rapido a tutte le sezioni principali con icone dedicate.
+- **Sidebar Rinnovata**:
+  - Restyling completo con icone `Rounded` (corretto bug icone/testo).
+  - Migliorata la spaziatura e l'indicatore della pagina attiva.
+- **Logo Cliccabile**:
+  - Il logo nell'header ora funge da link rapido per tornare alla Home.
+
+### Testing
+- **E2E Verification**: Eseguiti test completi su browser per verificare i flussi di navigazione e la responsività.
+- **Unit Tests**: Aggiunti test specifici per `ProfileSection` per garantire la robustezza delle regole di validazione età.
+- **Resources**: Disabilitata temporaneamente la sezione "Materiale Informativo" nella pagina Documenti.
+
 ## [3.2.0] - 2025-12-23
 ### Feature: Dynamic Validation & Info Box
 L'applicazione ora è in grado di leggere e interpretare dinamicamente i documenti di supporto.

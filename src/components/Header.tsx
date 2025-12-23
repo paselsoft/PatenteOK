@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useApp } from '../context/AppContext';
 import { useLocalStorage } from '../hooks/useLocalStorage';
+import { Link } from 'react-router-dom';
 
 const Header: React.FC = () => {
   const { toggleSidebar } = useApp();
@@ -25,10 +26,10 @@ const Header: React.FC = () => {
         >
           <span className="material-symbols-rounded">menu</span>
         </button>
-        <div className="flex flex-col">
+        <Link to="/" className="flex flex-col">
           <h1 className="text-lg font-black tracking-tight leading-none text-primary dark:text-blue-400">PatenteOK</h1>
           <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Motorizzazione Siena</span>
-        </div>
+        </Link>
       </div>
       <div className="flex items-center gap-2">
         <button

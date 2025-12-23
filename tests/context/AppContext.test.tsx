@@ -2,9 +2,9 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { render, screen, cleanup, act } from '@testing-library/react';
 
-import { AppProvider, useApp } from '../../context/AppContext';
-import { CITIZENSHIP } from '../../types';
-import { DOCUMENT_IDS } from '../../constants';
+import { AppProvider, useApp } from '../../src/context/AppContext';
+import { CITIZENSHIP } from '../../src/types';
+import { DOCUMENT_IDS } from '../../src/constants';
 
 // Mock Component to access context
 const TestComponent = () => {

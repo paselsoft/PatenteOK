@@ -2,7 +2,7 @@
 import { describe, it, expect, vi } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
 
-import { Toggle } from '../../../components/ui/Toggle';
+import { Toggle } from '../../../src/components/ui/Toggle';
 
 describe('Toggle', () => {
   it('renders correctly with label', () => {
