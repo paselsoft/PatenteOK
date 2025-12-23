@@ -21,8 +21,8 @@ export const HomePage: React.FC = () => {
         <PageTransition className="flex-1 max-w-2xl mx-auto w-full px-4 py-8 flex flex-col gap-8 pb-32">
             <Confetti trigger={progressPercent === 100} />
 
-            <Alert variant="info" title="Avviso Importante">
-                Per accedere allo sportello patenti della Motorizzazione Civile di Siena, è necessario prendere l'appuntamento su <a href="https://3327.easybook.cloud/#step-1" target="_blank" className="font-bold underline">questo portale</a>.
+            <Alert variant="info" title="Accesso allo Sportello">
+                L'accesso richiede prenotazione. Ti consigliamo di <strong>completare prima i passaggi qui sotto</strong> e prenotare su <a href="https://3327.easybook.cloud/#step-1" target="_blank" className="font-bold underline">questo portale</a> solo quando sei pronto.
             </Alert>
 
             {/* STATO DELLA DOMANDA */}
@@ -30,7 +30,7 @@ export const HomePage: React.FC = () => {
                 <div className="flex flex-col gap-1">
                     <span className="text-[11px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest">Stato della Domanda</span>
                     <h2 className="text-xl font-black text-slate-800 dark:text-slate-100 tracking-tight">
-                        {progressPercent === 100 ? "Pratica completata ✨" : "Documenti mancanti"}
+                        {progressPercent === 0 ? "Pratica da iniziare" : progressPercent === 100 ? "Pratica completata ✨" : "Stiamo procedendo..."}
                     </h2>
                 </div>
                 <div className="relative h-16 w-16 flex items-center justify-center">
@@ -55,21 +55,21 @@ export const HomePage: React.FC = () => {
 
             {/* Quick Actions / Navigation Cards with Steps */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {/* STEP 1: CONFIGURA PROFILO */}
+                {/* STEP 1: CHI PRESENTA LA DOMANDA */}
                 <Link to="/profile" className={`p-6 rounded-3xl border card-shadow hover:shadow-lg transition-all group relative overflow-hidden ${isStep1Complete ? 'bg-green-50/50 dark:bg-green-900/10 border-green-200 dark:border-green-900' : 'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800'}`}>
                     <div className={`absolute top-0 right-0 px-3 py-1 rounded-bl-2xl transition-colors ${isStep1Complete ? 'bg-green-100 dark:bg-green-900/30' : 'bg-blue-50 dark:bg-blue-900/20'}`}>
                         <span className={`text-[10px] font-black uppercase tracking-widest flex items-center gap-1 ${isStep1Complete ? 'text-green-600 dark:text-green-400' : 'text-primary dark:text-blue-400'}`}>
                             {isStep1Complete && <span className="material-symbols-rounded text-[14px]">check</span>}
-                            {isStep1Complete ? 'Completato' : 'Passo 1'}
+                            {isStep1Complete ? 'Fatto' : 'Passo 1'}
                         </span>
                     </div>
                     <div className="flex items-center gap-4 mb-3">
                         <div className={`w-10 h-10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform ${isStep1Complete ? 'bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400' : 'bg-blue-50 dark:bg-blue-900/30 text-primary dark:text-blue-400'}`}>
-                            <span className="material-symbols-rounded">settings</span>
+                            <span className="material-symbols-rounded">person_edit</span>
                         </div>
-                        <h3 className="font-bold text-slate-800 dark:text-slate-200">Configura Profilo</h3>
+                        <h3 className="font-bold text-slate-800 dark:text-slate-200">Chi presenta la domanda?</h3>
                     </div>
-                    <p className="text-sm text-slate-500 dark:text-slate-400">Imposta cittadinanza ed età per ottenere la tua checklist personalizzata.</p>
+                    <p className="text-sm text-slate-500 dark:text-slate-400">Specifica età e cittadinanza per capire esattamente cosa ti serve.</p>
                 </Link>
 
                 {/* STEP 2: PREPARA DOCUMENTI */}
@@ -77,16 +77,16 @@ export const HomePage: React.FC = () => {
                     <div className={`absolute top-0 right-0 px-3 py-1 rounded-bl-2xl transition-colors ${isStep2Complete ? 'bg-green-100 dark:bg-green-900/30' : 'bg-emerald-50 dark:bg-emerald-900/20'}`}>
                         <span className={`text-[10px] font-black uppercase tracking-widest flex items-center gap-1 ${isStep2Complete ? 'text-green-600 dark:text-green-400' : 'text-emerald-600 dark:text-emerald-400'}`}>
                             {isStep2Complete && <span className="material-symbols-rounded text-[14px]">check</span>}
-                            {isStep2Complete ? 'Completato' : 'Passo 2'}
+                            {isStep2Complete ? 'Pronto' : 'Passo 2'}
                         </span>
                     </div>
                     <div className="flex items-center gap-4 mb-3">
                         <div className={`w-10 h-10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform ${isStep2Complete ? 'bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400' : 'bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400'}`}>
                             <span className="material-symbols-rounded">description</span>
                         </div>
-                        <h3 className="font-bold text-slate-800 dark:text-slate-200">Prepara Documenti</h3>
+                        <h3 className="font-bold text-slate-800 dark:text-slate-200">Raccolta Documenti</h3>
                     </div>
-                    <p className="text-sm text-slate-500 dark:text-slate-400">Segui la lista interattiva, leggi le guide e scarica i moduli PDF.</p>
+                    <p className="text-sm text-slate-500 dark:text-slate-400">Segui la tua checklist personalizzata, scarica i moduli e leggi le guide.</p>
                 </Link>
 
                 {/* STEP 3: UFFICIO & APPUNTAMENTO */}
@@ -94,16 +94,16 @@ export const HomePage: React.FC = () => {
                     <div className="absolute top-0 right-0 bg-purple-50 dark:bg-purple-900/20 px-3 py-1 rounded-bl-2xl">
                         <span className="text-[10px] font-black text-purple-600 dark:text-purple-400 uppercase tracking-widest flex items-center gap-1">
                             {isStep3Ready && <span className="material-symbols-rounded text-[14px] animate-pulse">event_available</span>}
-                            {isStep3Ready ? 'Prenota Ora' : 'Passo 3'}
+                            {isStep3Ready ? 'Puoi Prenotare' : 'Passo 3'}
                         </span>
                     </div>
                     <div className="flex items-center gap-4 mb-3">
                         <div className="w-10 h-10 rounded-full bg-purple-50 dark:bg-purple-900/30 flex items-center justify-center text-purple-600 dark:text-purple-400 group-hover:scale-110 transition-transform">
                             <span className="material-symbols-rounded">corporate_fare</span>
                         </div>
-                        <h3 className="font-bold text-slate-800 dark:text-slate-200">Ufficio & Appuntamento</h3>
+                        <h3 className="font-bold text-slate-800 dark:text-slate-200">Consegna allo Sportello</h3>
                     </div>
-                    <p className="text-sm text-slate-500 dark:text-slate-400">Prenota lo sportello e consegna la pratica completa.</p>
+                    <p className="text-sm text-slate-500 dark:text-slate-400">Tutto pronto? Scopri orari e modalità per consegnare la pratica.</p>
                 </Link>
             </div>
 

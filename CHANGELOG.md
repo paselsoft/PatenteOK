@@ -1,6 +1,15 @@
 
 # Changelog
 
+## [2.3.8] - 2025-12-23
+### UX & Info Updates
+Migliorata l'esperienza utente nella Home Page e aggiunti gli orari dell'ufficio.
+
+### Improvements
+- **Home Page**: Testi più accoglienti ("Pratica da iniziare", "Chi presenta la domanda?") per ridurre l'ansia dell'utente.
+- **Office Info**: Aggiunta sezione "Orari Apertura" (Martedì - Venerdì: 08:30 - 12:00).
+- **Booking Alert**: Il messaggio di avviso ora consiglia esplicitamente di completare prima la checklist.
+
 ## [2.3.7] - 2025-12-23
 ### Fix: PagoPA Guide Link & Data Persistence
 Aggiunto collegamento alla guida ufficiale MIT per i versamenti PagoPA e risolto un bug di caching dei dati.

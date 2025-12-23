@@ -41,6 +41,19 @@ const OfficeInfo: React.FC = () => {
           </div>
         </div>
 
+        <div className="flex flex-col gap-2">
+          <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Orari Apertura</p>
+          <div className="flex items-start gap-3">
+            <div className="w-10 h-10 rounded-full bg-blue-50 dark:bg-blue-900/30 flex items-center justify-center text-primary dark:text-blue-400 shrink-0">
+              <span className="material-symbols-rounded">schedule</span>
+            </div>
+            <div className="text-[15px] font-bold text-slate-800 dark:text-slate-200 mt-2">
+              Dal Martedì al Venerdì<br />
+              <span className="text-slate-500 font-medium">08:30 - 12:00</span>
+            </div>
+          </div>
+        </div>
+
         <div className="pt-6 border-t border-slate-100 dark:border-slate-800">
           <Button
             variant="primary"
