@@ -1,6 +1,15 @@
 
 # Changelog
 
+## [2.3.6] - 2025-12-23
+### UX: Home Page Progress Indicators
+Indicatori visivi di completamento (Passo 1, 2, 3) nella Home Page.
+
+### Improvements
+- **Visual Feedback**: Le card "Passo 1" (Profilo) e "Passo 2" (Documenti) ora mostrano uno stato **"Completato"** (Verde + Spunta) quando l'utente ha terminato le rispettive attività.
+- **Office Navigation**: Il "Passo 3" (Ufficio) si illumina e invita a **"Prenota Ora"** quando la pratica è pronta.
+- **Dashboard Logic**: La logica della Home Page ora riflette accuratamente lo stato di avanzamento non solo nella barra circolare ma anche nei singoli step.
+
 ## [2.3.5] - 2025-12-23
 ### UX: Documents Page Navigation
 Completamento del flusso utente principale.

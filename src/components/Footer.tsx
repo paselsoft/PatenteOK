@@ -3,7 +3,7 @@ import React from 'react';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
-  const appVersion = "2.3.5"; // Idealmente letto da package.json o env
+  const appVersion = "2.3.6"; // Idealmente letto da package.json o env
 
   return (
     // Aggiunto pb-32 per compensare l'altezza del bottone fisso in basso e l'area sicura

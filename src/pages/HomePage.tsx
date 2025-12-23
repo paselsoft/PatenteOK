@@ -6,10 +6,16 @@ import { Alert } from '../components/ui/Alert';
 import { Link } from 'react-router-dom';
 
 export const HomePage: React.FC = () => {
-    const { documents } = useApp();
+    const { documents, isReadyToSubmit } = useApp();
 
     const completedCount = documents.filter(d => d.completed).length;
     const progressPercent = documents.length > 0 ? (completedCount / documents.length) * 100 : 0;
+
+    // Logic for completion states
+    // Step 1 is "done" if we have started working on documents (implied configuration done)
+    const isStep1Complete = progressPercent > 0;
+    const isStep2Complete = isReadyToSubmit;
+    const isStep3Ready = isReadyToSubmit;
 
     return (
         <PageTransition className="flex-1 max-w-2xl mx-auto w-full px-4 py-8 flex flex-col gap-8 pb-32">
@@ -49,12 +55,16 @@ export const HomePage: React.FC = () => {
 
             {/* Quick Actions / Navigation Cards with Steps */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <Link to="/profile" className="bg-white dark:bg-slate-900 p-6 rounded-3xl border border-slate-200 dark:border-slate-800 card-shadow hover:shadow-lg transition-all group relative overflow-hidden">
-                    <div className="absolute top-0 right-0 bg-blue-50 dark:bg-blue-900/20 px-3 py-1 rounded-bl-2xl">
-                        <span className="text-[10px] font-black text-primary dark:text-blue-400 uppercase tracking-widest">Passo 1</span>
+                {/* STEP 1: CONFIGURA PROFILO */}
+                <Link to="/profile" className={`p-6 rounded-3xl border card-shadow hover:shadow-lg transition-all group relative overflow-hidden ${isStep1Complete ? 'bg-green-50/50 dark:bg-green-900/10 border-green-200 dark:border-green-900' : 'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800'}`}>
+                    <div className={`absolute top-0 right-0 px-3 py-1 rounded-bl-2xl transition-colors ${isStep1Complete ? 'bg-green-100 dark:bg-green-900/30' : 'bg-blue-50 dark:bg-blue-900/20'}`}>
+                        <span className={`text-[10px] font-black uppercase tracking-widest flex items-center gap-1 ${isStep1Complete ? 'text-green-600 dark:text-green-400' : 'text-primary dark:text-blue-400'}`}>
+                            {isStep1Complete && <span className="material-symbols-rounded text-[14px]">check</span>}
+                            {isStep1Complete ? 'Completato' : 'Passo 1'}
+                        </span>
                     </div>
                     <div className="flex items-center gap-4 mb-3">
-                        <div className="w-10 h-10 rounded-full bg-blue-50 dark:bg-blue-900/30 flex items-center justify-center text-primary dark:text-blue-400 group-hover:scale-110 transition-transform">
+                        <div className={`w-10 h-10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform ${isStep1Complete ? 'bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400' : 'bg-blue-50 dark:bg-blue-900/30 text-primary dark:text-blue-400'}`}>
                             <span className="material-symbols-rounded">settings</span>
                         </div>
                         <h3 className="font-bold text-slate-800 dark:text-slate-200">Configura Profilo</h3>
@@ -62,12 +72,16 @@ export const HomePage: React.FC = () => {
                     <p className="text-sm text-slate-500 dark:text-slate-400">Imposta cittadinanza ed età per ottenere la tua checklist personalizzata.</p>
                 </Link>
 
-                <Link to="/documents" className="bg-white dark:bg-slate-900 p-6 rounded-3xl border border-slate-200 dark:border-slate-800 card-shadow hover:shadow-lg transition-all group relative overflow-hidden">
-                    <div className="absolute top-0 right-0 bg-emerald-50 dark:bg-emerald-900/20 px-3 py-1 rounded-bl-2xl">
-                        <span className="text-[10px] font-black text-emerald-600 dark:text-emerald-400 uppercase tracking-widest">Passo 2</span>
+                {/* STEP 2: PREPARA DOCUMENTI */}
+                <Link to="/documents" className={`p-6 rounded-3xl border card-shadow hover:shadow-lg transition-all group relative overflow-hidden ${isStep2Complete ? 'bg-green-50/50 dark:bg-green-900/10 border-green-200 dark:border-green-900' : 'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800'}`}>
+                    <div className={`absolute top-0 right-0 px-3 py-1 rounded-bl-2xl transition-colors ${isStep2Complete ? 'bg-green-100 dark:bg-green-900/30' : 'bg-emerald-50 dark:bg-emerald-900/20'}`}>
+                        <span className={`text-[10px] font-black uppercase tracking-widest flex items-center gap-1 ${isStep2Complete ? 'text-green-600 dark:text-green-400' : 'text-emerald-600 dark:text-emerald-400'}`}>
+                            {isStep2Complete && <span className="material-symbols-rounded text-[14px]">check</span>}
+                            {isStep2Complete ? 'Completato' : 'Passo 2'}
+                        </span>
                     </div>
                     <div className="flex items-center gap-4 mb-3">
-                        <div className="w-10 h-10 rounded-full bg-emerald-50 dark:bg-emerald-900/30 flex items-center justify-center text-emerald-600 dark:text-emerald-400 group-hover:scale-110 transition-transform">
+                        <div className={`w-10 h-10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform ${isStep2Complete ? 'bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400' : 'bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400'}`}>
                             <span className="material-symbols-rounded">description</span>
                         </div>
                         <h3 className="font-bold text-slate-800 dark:text-slate-200">Prepara Documenti</h3>
@@ -75,9 +89,13 @@ export const HomePage: React.FC = () => {
                     <p className="text-sm text-slate-500 dark:text-slate-400">Segui la lista interattiva, leggi le guide e scarica i moduli PDF.</p>
                 </Link>
 
-                <Link to="/office" className="bg-white dark:bg-slate-900 p-6 rounded-3xl border border-slate-200 dark:border-slate-800 card-shadow hover:shadow-lg transition-all group relative overflow-hidden md:col-span-2">
+                {/* STEP 3: UFFICIO & APPUNTAMENTO */}
+                <Link to="/office" className={`p-6 rounded-3xl border card-shadow hover:shadow-lg transition-all group relative overflow-hidden md:col-span-2 ${isStep3Ready ? 'ring-2 ring-primary ring-offset-2 dark:ring-offset-slate-900' : 'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800'}`}>
                     <div className="absolute top-0 right-0 bg-purple-50 dark:bg-purple-900/20 px-3 py-1 rounded-bl-2xl">
-                        <span className="text-[10px] font-black text-purple-600 dark:text-purple-400 uppercase tracking-widest">Passo 3</span>
+                        <span className="text-[10px] font-black text-purple-600 dark:text-purple-400 uppercase tracking-widest flex items-center gap-1">
+                            {isStep3Ready && <span className="material-symbols-rounded text-[14px] animate-pulse">event_available</span>}
+                            {isStep3Ready ? 'Prenota Ora' : 'Passo 3'}
+                        </span>
                     </div>
                     <div className="flex items-center gap-4 mb-3">
                         <div className="w-10 h-10 rounded-full bg-purple-50 dark:bg-purple-900/30 flex items-center justify-center text-purple-600 dark:text-purple-400 group-hover:scale-110 transition-transform">
