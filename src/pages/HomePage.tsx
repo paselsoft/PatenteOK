@@ -6,7 +6,7 @@ import { Alert } from '../components/ui/Alert';
 import { Link } from 'react-router-dom';
 
 export const HomePage: React.FC = () => {
-    const { documents, isReadyToSubmit } = useApp();
+    const { documents, isReadyToSubmit, profile } = useApp();
 
     const completedCount = documents.filter(d => d.completed).length;
     const progressPercent = documents.length > 0 ? (completedCount / documents.length) * 100 : 0;
@@ -16,6 +16,7 @@ export const HomePage: React.FC = () => {
     const isStep1Complete = progressPercent > 0;
     const isStep2Complete = isReadyToSubmit;
     const isStep3Ready = isReadyToSubmit;
+    const isAppointmentBooked = profile?.isAppointmentBooked;
 
     return (
         <PageTransition className="flex-1 max-w-2xl mx-auto w-full px-4 py-8 flex flex-col gap-8 pb-32">
@@ -90,20 +91,40 @@ export const HomePage: React.FC = () => {
                 </Link>
 
                 {/* STEP 3: UFFICIO & APPUNTAMENTO */}
-                <Link to="/office" className={`p-6 rounded-3xl border card-shadow hover:shadow-lg transition-all group relative overflow-hidden md:col-span-2 ${isStep3Ready ? 'ring-2 ring-primary ring-offset-2 dark:ring-offset-slate-900' : 'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800'}`}>
-                    <div className="absolute top-0 right-0 bg-purple-50 dark:bg-purple-900/20 px-3 py-1 rounded-bl-2xl">
-                        <span className="text-[10px] font-black text-purple-600 dark:text-purple-400 uppercase tracking-widest flex items-center gap-1">
-                            {isStep3Ready && <span className="material-symbols-rounded text-[14px] animate-pulse">event_available</span>}
-                            {isStep3Ready ? 'Puoi Prenotare' : 'Passo 3'}
+                <Link to="/office" className={`p-6 rounded-3xl border card-shadow hover:shadow-lg transition-all group relative overflow-hidden md:col-span-2 ${isAppointmentBooked
+                        ? 'bg-green-50/50 dark:bg-green-900/10 border-green-200 dark:border-green-900'
+                        : isStep3Ready
+                            ? 'ring-2 ring-primary ring-offset-2 dark:ring-offset-slate-900'
+                            : 'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800'
+                    }`}>
+                    <div className={`absolute top-0 right-0 px-3 py-1 rounded-bl-2xl transition-colors ${isAppointmentBooked
+                            ? 'bg-green-100 dark:bg-green-900/30'
+                            : 'bg-purple-50 dark:bg-purple-900/20'
+                        }`}>
+                        <span className={`text-[10px] font-black uppercase tracking-widest flex items-center gap-1 ${isAppointmentBooked
+                                ? 'text-green-600 dark:text-green-400'
+                                : 'text-purple-600 dark:text-purple-400'
+                            }`}>
+                            {isAppointmentBooked
+                                ? <><span className="material-symbols-rounded text-[14px]">event_available</span> Confermata</>
+                                : isStep3Ready
+                                    ? <><span className="material-symbols-rounded text-[14px] animate-pulse">event</span> Puoi Prenotare</>
+                                    : 'Passo 3'
+                            }
                         </span>
                     </div>
                     <div className="flex items-center gap-4 mb-3">
-                        <div className="w-10 h-10 rounded-full bg-purple-50 dark:bg-purple-900/30 flex items-center justify-center text-purple-600 dark:text-purple-400 group-hover:scale-110 transition-transform">
+                        <div className={`w-10 h-10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform ${isAppointmentBooked
+                                ? 'bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400'
+                                : 'bg-purple-50 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400'
+                            }`}>
                             <span className="material-symbols-rounded">corporate_fare</span>
                         </div>
                         <h3 className="font-bold text-slate-800 dark:text-slate-200">Consegna allo Sportello</h3>
                     </div>
-                    <p className="text-sm text-slate-500 dark:text-slate-400">Tutto pronto? Scopri orari e modalità per consegnare la pratica.</p>
+                    <p className="text-sm text-slate-500 dark:text-slate-400">
+                        {isAppointmentBooked ? 'Ottimo! Ricordati di portare tutti i documenti originali.' : 'Tutto pronto? Scopri orari e modalità per consegnare la pratica.'}
+                    </p>
                 </Link>
             </div>
 

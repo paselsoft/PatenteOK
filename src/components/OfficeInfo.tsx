@@ -1,7 +1,14 @@
 import React from 'react';
 import { Button } from './ui/Button';
+import { useApp } from '../context/AppContext';
 
 const OfficeInfo: React.FC = () => {
+  const { profile, updateProfile } = useApp();
+  const isBooked = profile.isAppointmentBooked;
+
+  const handleToggleBooking = () => {
+    updateProfile({ isAppointmentBooked: !isBooked });
+  };
   return (
     <div className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 card-shadow p-6 flex flex-col gap-6 transition-colors">
       <div className="flex items-center gap-3 pb-4 border-b border-slate-100 dark:border-slate-800">
@@ -65,6 +72,19 @@ const OfficeInfo: React.FC = () => {
             Prenota Appuntamento
           </Button>
           <p className="text-center text-[10px] uppercase font-bold text-slate-400 mt-3 tracking-widest">Portale EasyBook</p>
+
+          <button
+            onClick={handleToggleBooking}
+            className={`w-full py-3 rounded-xl flex items-center justify-center gap-2 text-sm font-bold transition-all ${isBooked
+                ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400'
+                : 'bg-slate-100 text-slate-600 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700'
+              }`}
+          >
+            <span className="material-symbols-rounded text-lg">
+              {isBooked ? 'check_circle' : 'fingerprint'}
+            </span>
+            {isBooked ? 'Appuntamento Confermato' : 'Ho già prenotato'}
+          </button>
         </div>
       </div>
     </div>

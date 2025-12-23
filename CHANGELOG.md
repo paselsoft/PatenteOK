@@ -1,6 +1,14 @@
 
 # Changelog
 
+## [2.3.9] - 2025-12-24
+### New Feature: Appointment Tracking
+Aggiunta la possibilità di confermare manualmente l'avvenuta prenotazione dell'appuntamento.
+
+### Features
+- **Office Page**: Nuovo pulsante "Ho già prenotato" per segnare l'appuntamento come confermato.
+- **Home Page**: Il "Passo 3" ora riflette lo stato della prenotazione, diventando verde e mostrando un messaggio di conferma quando l'utente ha prenotato.
+
 ## [2.3.8] - 2025-12-23
 ### UX & Info Updates
 Migliorata l'esperienza utente nella Home Page e aggiunti gli orari dell'ufficio.

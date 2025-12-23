@@ -31,6 +31,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     licenseCategory: LICENSE_CATEGORIES.AM,
     isMinor: false,
     isDelegated: false,
+    isAppointmentBooked: false,
   });
 
   // Persistenza Documenti

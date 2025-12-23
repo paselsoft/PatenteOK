@@ -56,4 +56,5 @@ export interface ProfileInfo {
   licenseCategory: LicenseCategory;
   isMinor: boolean;
   isDelegated: boolean;
+  isAppointmentBooked?: boolean;
 }
