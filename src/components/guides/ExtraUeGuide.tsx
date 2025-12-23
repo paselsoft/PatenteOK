@@ -23,54 +23,54 @@ export const ExtraUeGuide: React.FC<ExtraUeGuideProps> = ({ onComplete }) => {
 
       <GuideStep number="2" title="Documenti di Soggiorno">
         <p className="text-xs text-secondary-text mb-1">Devi esibire in originale e copia uno di questi:</p>
-          
-          <div className="bg-slate-50 p-3 rounded-lg border border-slate-200 text-xs space-y-2 mt-1">
-            <div className="flex items-start gap-2">
-              <span className="material-symbols-outlined text-[16px] text-green-600 mt-0.5">check_circle</span>
-              <span className="text-secondary-text"><strong>Permesso di Soggiorno</strong> (Originale + Fotocopia)</span>
-            </div>
-            <div className="flex items-start gap-2">
-              <span className="material-symbols-outlined text-[16px] text-green-600 mt-0.5">check_circle</span>
-              <span className="text-secondary-text"><strong>Permesso Soggiornanti Lungo Periodo</strong> UE</span>
-            </div>
-            <div className="flex items-start gap-2">
-              <span className="material-symbols-outlined text-[16px] text-orange-600 mt-0.5">warning</span>
-              <div className="flex flex-col">
-                <span className="font-bold text-orange-800">Se permesso in rinnovo:</span>
-                <span className="text-secondary-text">Ricevuta postale/Questura + Copia permesso scaduto.</span>
-              </div>
-            </div>
-            <div className="flex items-start gap-2">
-              <span className="material-symbols-outlined text-[16px] text-orange-600 mt-0.5">warning</span>
-              <div className="flex flex-col">
-                <span className="font-bold text-orange-800">Se primo rilascio:</span>
-                <span className="text-secondary-text">Basta la ricevuta postale/Questura.</span>
-              </div>
+
+        <div className="bg-slate-50 p-3 rounded-lg border border-slate-200 text-xs space-y-2 mt-1">
+          <div className="flex items-start gap-2">
+            <span className="material-symbols-rounded text-[16px] text-green-600 mt-0.5">check_circle</span>
+            <span className="text-secondary-text"><strong>Permesso di Soggiorno</strong> (Originale + Fotocopia)</span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="material-symbols-rounded text-[16px] text-green-600 mt-0.5">check_circle</span>
+            <span className="text-secondary-text"><strong>Permesso Soggiornanti Lungo Periodo</strong> UE</span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="material-symbols-rounded text-[16px] text-orange-600 mt-0.5">warning</span>
+            <div className="flex flex-col">
+              <span className="font-bold text-orange-800">Se permesso in rinnovo:</span>
+              <span className="text-secondary-text">Ricevuta postale/Questura + Copia permesso scaduto.</span>
             </div>
           </div>
+          <div className="flex items-start gap-2">
+            <span className="material-symbols-rounded text-[16px] text-orange-600 mt-0.5">warning</span>
+            <div className="flex flex-col">
+              <span className="font-bold text-orange-800">Se primo rilascio:</span>
+              <span className="text-secondary-text">Basta la ricevuta postale/Questura.</span>
+            </div>
+          </div>
+        </div>
       </GuideStep>
 
       <GuideStep number="!" title="Attenzione: Discordanza Nomi" colorClass="bg-yellow-100 text-yellow-700 border-yellow-200">
-         <div className="bg-yellow-50 p-3 rounded-lg border border-yellow-100 text-[11px] text-yellow-900 leading-relaxed mt-1">
-            Spesso ci sono differenze (ordine cognomi, translitterazione) tra Passaporto, Permesso di Soggiorno e Carta d'Identità.
-            <br/><br/>
-            <strong>Regola:</strong> I dati devono coincidere. Se diversi, l'Ufficio Motorizzazione richiederà la <strong>rettifica anagrafica</strong> in Questura/Comune prima di accettare la pratica.
-          </div>
+        <div className="bg-yellow-50 p-3 rounded-lg border border-yellow-100 text-[11px] text-yellow-900 leading-relaxed mt-1">
+          Spesso ci sono differenze (ordine cognomi, translitterazione) tra Passaporto, Permesso di Soggiorno e Carta d'Identità.
+          <br /><br />
+          <strong>Regola:</strong> I dati devono coincidere. Se diversi, l'Ufficio Motorizzazione richiederà la <strong>rettifica anagrafica</strong> in Questura/Comune prima di accettare la pratica.
+        </div>
       </GuideStep>
 
       <GuideStep number="3" title="Autocertificazione" isLast colorClass="bg-slate-100 text-slate-600 border-slate-200">
-         <p className="text-xs text-secondary-text leading-relaxed mb-3">
-            L'autocertificazione è valida <strong>solo</strong> per dati verificabili dalla Pubblica Amministrazione italiana (es. residenza).
-          </p>
-          <p className="text-xs text-secondary-text leading-relaxed mb-3">
-            Dati familiari o fatti avvenuti all'estero richiedono certificati originali tradotti e legalizzati.
-          </p>
-          
-          <div className="mt-3">
-            <Button onClick={onComplete} icon="done_all" fullWidth>
-               Ho verificato i requisiti
-            </Button>
-          </div>
+        <p className="text-xs text-secondary-text leading-relaxed mb-3">
+          L'autocertificazione è valida <strong>solo</strong> per dati verificabili dalla Pubblica Amministrazione italiana (es. residenza).
+        </p>
+        <p className="text-xs text-secondary-text leading-relaxed mb-3">
+          Dati familiari o fatti avvenuti all'estero richiedono certificati originali tradotti e legalizzati.
+        </p>
+
+        <div className="mt-3">
+          <Button onClick={onComplete} icon="done_all" fullWidth>
+            Ho verificato i requisiti
+          </Button>
+        </div>
       </GuideStep>
     </GuideContainer>
   );

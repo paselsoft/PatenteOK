@@ -47,36 +47,45 @@ export const HomePage: React.FC = () => {
                 </div>
             </div>
 
-            {/* Quick Actions / Navigation Cards */}
+            {/* Quick Actions / Navigation Cards with Steps */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <Link to="/profile" className="bg-white dark:bg-slate-900 p-6 rounded-3xl border border-slate-200 dark:border-slate-800 card-shadow hover:shadow-lg transition-all group">
+                <Link to="/profile" className="bg-white dark:bg-slate-900 p-6 rounded-3xl border border-slate-200 dark:border-slate-800 card-shadow hover:shadow-lg transition-all group relative overflow-hidden">
+                    <div className="absolute top-0 right-0 bg-blue-50 dark:bg-blue-900/20 px-3 py-1 rounded-bl-2xl">
+                        <span className="text-[10px] font-black text-primary dark:text-blue-400 uppercase tracking-widest">Passo 1</span>
+                    </div>
                     <div className="flex items-center gap-4 mb-3">
                         <div className="w-10 h-10 rounded-full bg-blue-50 dark:bg-blue-900/30 flex items-center justify-center text-primary dark:text-blue-400 group-hover:scale-110 transition-transform">
                             <span className="material-symbols-rounded">settings</span>
                         </div>
-                        <h3 className="font-bold text-slate-800 dark:text-slate-200">Configura</h3>
+                        <h3 className="font-bold text-slate-800 dark:text-slate-200">Configura Profilo</h3>
                     </div>
-                    <p className="text-sm text-slate-500 dark:text-slate-400">Imposta cittadinanza, età e dettagli della pratica.</p>
+                    <p className="text-sm text-slate-500 dark:text-slate-400">Imposta cittadinanza ed età per ottenere la tua checklist personalizzata.</p>
                 </Link>
 
-                <Link to="/documents" className="bg-white dark:bg-slate-900 p-6 rounded-3xl border border-slate-200 dark:border-slate-800 card-shadow hover:shadow-lg transition-all group">
+                <Link to="/documents" className="bg-white dark:bg-slate-900 p-6 rounded-3xl border border-slate-200 dark:border-slate-800 card-shadow hover:shadow-lg transition-all group relative overflow-hidden">
+                    <div className="absolute top-0 right-0 bg-emerald-50 dark:bg-emerald-900/20 px-3 py-1 rounded-bl-2xl">
+                        <span className="text-[10px] font-black text-emerald-600 dark:text-emerald-400 uppercase tracking-widest">Passo 2</span>
+                    </div>
                     <div className="flex items-center gap-4 mb-3">
                         <div className="w-10 h-10 rounded-full bg-emerald-50 dark:bg-emerald-900/30 flex items-center justify-center text-emerald-600 dark:text-emerald-400 group-hover:scale-110 transition-transform">
                             <span className="material-symbols-rounded">description</span>
                         </div>
-                        <h3 className="font-bold text-slate-800 dark:text-slate-200">Documenti</h3>
+                        <h3 className="font-bold text-slate-800 dark:text-slate-200">Prepara Documenti</h3>
                     </div>
-                    <p className="text-sm text-slate-500 dark:text-slate-400">Gestisci la checklist e scarica i moduli.</p>
+                    <p className="text-sm text-slate-500 dark:text-slate-400">Segui la lista interattiva, leggi le guide e scarica i moduli PDF.</p>
                 </Link>
 
-                <Link to="/office" className="bg-white dark:bg-slate-900 p-6 rounded-3xl border border-slate-200 dark:border-slate-800 card-shadow hover:shadow-lg transition-all group">
+                <Link to="/office" className="bg-white dark:bg-slate-900 p-6 rounded-3xl border border-slate-200 dark:border-slate-800 card-shadow hover:shadow-lg transition-all group relative overflow-hidden md:col-span-2">
+                    <div className="absolute top-0 right-0 bg-purple-50 dark:bg-purple-900/20 px-3 py-1 rounded-bl-2xl">
+                        <span className="text-[10px] font-black text-purple-600 dark:text-purple-400 uppercase tracking-widest">Passo 3</span>
+                    </div>
                     <div className="flex items-center gap-4 mb-3">
                         <div className="w-10 h-10 rounded-full bg-purple-50 dark:bg-purple-900/30 flex items-center justify-center text-purple-600 dark:text-purple-400 group-hover:scale-110 transition-transform">
                             <span className="material-symbols-rounded">corporate_fare</span>
                         </div>
-                        <h3 className="font-bold text-slate-800 dark:text-slate-200">Ufficio</h3>
+                        <h3 className="font-bold text-slate-800 dark:text-slate-200">Ufficio & Appuntamento</h3>
                     </div>
-                    <p className="text-sm text-slate-500 dark:text-slate-400">Orari, contatti e prenotazioni.</p>
+                    <p className="text-sm text-slate-500 dark:text-slate-400">Prenota lo sportello e consegna la pratica completa.</p>
                 </Link>
             </div>
 

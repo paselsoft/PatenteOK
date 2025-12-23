@@ -24,7 +24,7 @@ export const MedicalGuide: React.FC<MedicalGuideProps> = ({ onComplete }) => {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-1">
           <div className="bg-slate-50 border border-slate-200 p-3 rounded-lg">
             <div className="flex items-center gap-2 mb-1 text-primary">
-              <span className="material-symbols-outlined text-[18px]">person</span>
+              <span className="material-symbols-rounded text-[18px]">person</span>
               <span className="text-xs font-bold uppercase">Standard</span>
             </div>
             <p className="text-[11px] text-secondary-text leading-snug">
@@ -34,7 +34,7 @@ export const MedicalGuide: React.FC<MedicalGuideProps> = ({ onComplete }) => {
 
           <div className="bg-slate-50 border border-slate-200 p-3 rounded-lg">
             <div className="flex items-center gap-2 mb-1 text-orange-600">
-              <span className="material-symbols-outlined text-[18px]">local_hospital</span>
+              <span className="material-symbols-rounded text-[18px]">local_hospital</span>
               <span className="text-xs font-bold uppercase">Commissione (CML)</span>
             </div>
             <p className="text-[11px] text-secondary-text leading-snug">
@@ -52,7 +52,7 @@ export const MedicalGuide: React.FC<MedicalGuideProps> = ({ onComplete }) => {
           <li>Eventuali certificati specialistici.</li>
         </ul>
         <div className="bg-blue-50 border border-blue-100 p-3 rounded-lg mt-2 flex gap-3 items-start">
-          <span className="material-symbols-outlined text-primary text-[20px] shrink-0">photo_camera</span>
+          <span className="material-symbols-rounded text-primary text-[20px] shrink-0">photo_camera</span>
           <div className="flex flex-col gap-0.5">
             <span className="text-xs font-bold text-primary">Attenzione alla Foto</span>
             <p className="text-[11px] text-slate-600 leading-snug">

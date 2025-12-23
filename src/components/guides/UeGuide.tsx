@@ -30,11 +30,11 @@ export const UeGuide: React.FC<UeGuideProps> = ({ onComplete }) => {
       </GuideStep>
 
       <GuideStep number="2" title="Documenti di Riconoscimento">
-         <p className="text-xs text-secondary-text mb-1">Puoi identificarti con:</p>
-          <ul className="text-xs text-secondary-text space-y-1 list-disc pl-4">
-            <li>Carta d'identità italiana (se residente).</li>
-            <li>Documento valido del tuo Paese d'origine (Passaporto o Carta d'Identità UE) se hai solo la residenza normale.</li>
-          </ul>
+        <p className="text-xs text-secondary-text mb-1">Puoi identificarti con:</p>
+        <ul className="text-xs text-secondary-text space-y-1 list-disc pl-4">
+          <li>Carta d'identità italiana (se residente).</li>
+          <li>Documento valido del tuo Paese d'origine (Passaporto o Carta d'Identità UE) se hai solo la residenza normale.</li>
+        </ul>
       </GuideStep>
 
       <GuideStep number="3" title="Checklist Documenti" isLast colorClass="bg-slate-100 text-slate-600 border-slate-200">
@@ -49,16 +49,16 @@ export const UeGuide: React.FC<UeGuideProps> = ({ onComplete }) => {
         </ul>
 
         <div className="mt-3 flex gap-2 items-start bg-green-50 p-2.5 rounded border border-green-100">
-           <span className="material-symbols-outlined text-green-700 text-[18px] shrink-0">verified</span>
-           <div className="text-[11px] text-green-900 leading-snug">
-             <strong>Vantaggio UE:</strong> Puoi usare pienamente l'autocertificazione per comprovare stati e qualità personali, equiparandoti ai cittadini italiani.
-           </div>
+          <span className="material-symbols-rounded text-green-700 text-[18px] shrink-0">verified</span>
+          <div className="text-[11px] text-green-900 leading-snug">
+            <strong>Vantaggio UE:</strong> Puoi usare pienamente l'autocertificazione per comprovare stati e qualità personali, equiparandoti ai cittadini italiani.
+          </div>
         </div>
 
         <div className="mt-3">
-           <Button onClick={onComplete} icon="done_all" fullWidth>
-             Ho verificato i requisiti UE
-           </Button>
+          <Button onClick={onComplete} icon="done_all" fullWidth>
+            Ho verificato i requisiti UE
+          </Button>
         </div>
       </GuideStep>
     </GuideContainer>

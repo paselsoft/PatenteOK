@@ -1,6 +1,14 @@
 
 # Changelog
 
+## [2.3.3] - 2025-12-23
+### Fix: Icons & Guide Loading
+Risolti problemi critici di visualizzazione delle icone e del contenuto delle guide.
+
+### Bug Fixes
+- **Empty Tabs**: Risolto un bug che impediva il caricamento delle guide ("Certificato Medico", "Documenti d'Identità") a causa di una discrepanza negli ID dei documenti (`DocumentList.tsx` vs `constants.ts`).
+- **Icon Standardization**: Convertite tutte le icone dell'interfaccia a `material-symbols-rounded` per garantire coerenza visiva con il font caricato in `index.html`.
+
 ## [2.3.2] - 2025-12-23
 ### Bugfix: Dark Mode Footer
 - Risolto un problema di rendering che mostrava una banda bianca a fondo pagina in modalità scura, causato da stili CSS legacy e classi hardcoded nel Footer.

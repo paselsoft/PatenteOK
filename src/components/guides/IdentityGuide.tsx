@@ -13,7 +13,7 @@ export const IdentityGuide: React.FC<IdentityGuideProps> = ({ onComplete }) => {
     <GuideContainer>
       {/* Intro Section */}
       <div className="flex items-start gap-3 bg-slate-50 p-3 rounded-lg border border-slate-200">
-        <span className="material-symbols-outlined text-primary text-[24px] mt-0.5">badge</span>
+        <span className="material-symbols-rounded text-primary text-[24px] mt-0.5">badge</span>
         <div className="flex flex-col gap-1">
           <p className="text-xs text-secondary-text leading-relaxed">
             Il documento di riconoscimento è fondamentale per presentare la domanda e per farsi identificare ad ogni prova d'esame. Deve essere <strong>valido</strong> (non scaduto) e <strong>integro</strong>.
@@ -24,17 +24,17 @@ export const IdentityGuide: React.FC<IdentityGuideProps> = ({ onComplete }) => {
       <GuideStep number="1" title="Documento Principale">
         <div className="bg-white border border-slate-200 rounded-lg p-3 shadow-sm mt-1">
           <div className="flex items-center gap-2 mb-1.5">
-            <span className="material-symbols-outlined text-[18px] text-primary">id_card</span>
+            <span className="material-symbols-rounded text-[18px] text-primary">id_card</span>
             <span className="text-sm font-bold text-text-dark">Carta d'Identità</span>
           </div>
           <p className="text-xs text-secondary-text leading-snug mb-2">
             Valida sia cartacea che elettronica (CIE).
           </p>
           <div className="bg-blue-50 text-[11px] text-blue-900 p-2 rounded border border-blue-100 flex gap-2 items-start">
-             <span className="material-symbols-outlined text-[14px] mt-0.5">info</span>
-             <span>
-               <strong>CIE in fase di rilascio:</strong> È valida anche la ricevuta cartacea della richiesta rilasciata dal Comune in attesa della consegna.
-             </span>
+            <span className="material-symbols-rounded text-[14px] mt-0.5">info</span>
+            <span>
+              <strong>CIE in fase di rilascio:</strong> È valida anche la ricevuta cartacea della richiesta rilasciata dal Comune in attesa della consegna.
+            </span>
           </div>
         </div>
       </GuideStep>
@@ -45,19 +45,19 @@ export const IdentityGuide: React.FC<IdentityGuideProps> = ({ onComplete }) => {
         </p>
         <div className="grid grid-cols-2 gap-2 text-[11px] text-secondary-text font-medium">
           <div className="flex items-center gap-1.5 bg-slate-50 p-2 rounded border border-slate-100">
-            <span className="material-symbols-outlined text-[16px]">check</span> Passaporto
+            <span className="material-symbols-rounded text-[16px]">check</span> Passaporto
           </div>
           <div className="flex items-center gap-1.5 bg-slate-50 p-2 rounded border border-slate-100">
-            <span className="material-symbols-outlined text-[16px]">check</span> Patente (altra cat.)
+            <span className="material-symbols-rounded text-[16px]">check</span> Patente (altra cat.)
           </div>
           <div className="flex items-center gap-1.5 bg-slate-50 p-2 rounded border border-slate-100">
-             <span className="material-symbols-outlined text-[16px]">check</span> Patente Nautica
+            <span className="material-symbols-rounded text-[16px]">check</span> Patente Nautica
           </div>
           <div className="flex items-center gap-1.5 bg-slate-50 p-2 rounded border border-slate-100">
-             <span className="material-symbols-outlined text-[16px]">check</span> Porto d'Armi
+            <span className="material-symbols-rounded text-[16px]">check</span> Porto d'Armi
           </div>
           <div className="col-span-2 flex items-center gap-1.5 bg-slate-50 p-2 rounded border border-slate-100">
-             <span className="material-symbols-outlined text-[16px]">check</span> Tessere Statali (Mod. AT/BT)
+            <span className="material-symbols-rounded text-[16px]">check</span> Tessere Statali (Mod. AT/BT)
           </div>
         </div>
       </GuideStep>
@@ -74,7 +74,7 @@ export const IdentityGuide: React.FC<IdentityGuideProps> = ({ onComplete }) => {
             <strong className="text-xs block text-text-dark">Extra-UE</strong>
             <p className="text-[11px] text-secondary-text">
               Identificazione tramite <strong>Passaporto</strong>.
-              <br/>
+              <br />
               <span className="italic text-slate-500">Nota: Il Permesso di Soggiorno serve per la regolarità, il Passaporto per l'identità.</span>
             </p>
           </div>
@@ -90,8 +90,8 @@ export const IdentityGuide: React.FC<IdentityGuideProps> = ({ onComplete }) => {
 
         <div className="bg-yellow-50 border border-yellow-100 p-3 rounded-lg flex flex-col gap-1 mt-3">
           <strong className="text-xs text-yellow-900 flex items-center gap-1">
-             <span className="material-symbols-outlined text-[16px]">warning</span>
-             Attenzione per la Delega
+            <span className="material-symbols-rounded text-[16px]">warning</span>
+            Attenzione per la Delega
           </strong>
           <p className="text-[11px] text-yellow-800 leading-snug">
             Se incarichi qualcun altro, devi fornirgli una <strong>fotocopia fronte-retro</strong> del tuo documento per validare la firma.

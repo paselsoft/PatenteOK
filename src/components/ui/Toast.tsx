@@ -35,15 +35,15 @@ export const Toast: React.FC<ToastProps> = ({ id, message, type, onRemove, durat
   }, [id, duration, onRemove]);
 
   return (
-    <div 
+    <div
       className={`${styles[type]} px-4 py-3 rounded-lg shadow-lg flex items-center gap-3 min-w-[300px] max-w-md animate-in slide-in-from-bottom-5 fade-in duration-300 pointer-events-auto`}
       role="status"
       aria-live="polite"
     >
-      <span className="material-symbols-outlined text-[20px]" aria-hidden="true">{icons[type]}</span>
+      <span className="material-symbols-rounded text-[20px]" aria-hidden="true">{icons[type]}</span>
       <p className="text-sm font-medium flex-1">{message}</p>
       <button onClick={() => onRemove(id)} className="opacity-80 hover:opacity-100 transition-opacity" aria-label="Chiudi notifica">
-        <span className="material-symbols-outlined text-[18px]">close</span>
+        <span className="material-symbols-rounded text-[18px]">close</span>
       </button>
     </div>
   );

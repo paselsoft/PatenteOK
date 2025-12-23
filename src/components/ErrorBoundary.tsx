@@ -31,7 +31,7 @@ export class ErrorBoundary extends Component<Props, State> {
         <div className="min-h-screen flex items-center justify-center bg-slate-50 p-4">
           <div className="bg-white p-8 rounded-xl shadow-lg max-w-md w-full text-center border border-slate-200" role="alert">
             <div className="w-16 h-16 bg-red-100 text-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
-              <span className="material-symbols-outlined text-3xl" aria-hidden="true">error_outline</span>
+              <span className="material-symbols-rounded text-3xl" aria-hidden="true">error_outline</span>
             </div>
             <h1 className="text-xl font-bold text-slate-800 mb-2">Qualcosa è andato storto</h1>
             <p className="text-slate-600 mb-6 text-sm">
@@ -48,7 +48,7 @@ export class ErrorBoundary extends Component<Props, State> {
                 <summary className="text-xs text-slate-400 cursor-pointer hover:text-slate-600 focus:outline-none focus:underline list-none">
                   <span className="flex items-center justify-center gap-1">
                     Dettagli tecnici
-                    <span className="material-symbols-outlined text-[14px] group-open:rotate-180 transition-transform">expand_more</span>
+                    <span className="material-symbols-rounded text-[14px] group-open:rotate-180 transition-transform">expand_more</span>
                   </span>
                 </summary>
                 <pre className="mt-2 text-[10px] bg-slate-100 p-2 rounded overflow-auto text-slate-700 max-h-32 font-mono border border-slate-200">
