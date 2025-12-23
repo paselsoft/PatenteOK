@@ -1,6 +1,22 @@
 
 # Changelog
 
+## [2.3.5] - 2025-12-23
+### UX: Documents Page Navigation
+Completamento del flusso utente principale.
+
+### Improvements
+- **Documents Navigation**: Aggiunto pulsante "Prenota Appuntamento" nella checklist documenti.
+  - Il pulsante diventa "Primary" solo quando tutti i documenti sono completati (`isReadyToSubmit`).
+  - Guida l'utente alla schermata finale `/office`.
+
+## [2.3.4] - 2025-12-23
+### UX: Navigation Improvements
+Migliorata la navigazione tra le fasi della pratica.
+
+### Improvements
+- **Profile Navigation**: Aggiunto un pulsante esplicito "Salva e Vai ai Documenti" nella pagina di configurazione profilo per guidare l'utente al passaggio successivo.
+
 ## [2.3.3] - 2025-12-23
 ### Fix: Icons & Guide Loading
 Risolti problemi critici di visualizzazione delle icone e del contenuto delle guide.
