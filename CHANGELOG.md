@@ -1,6 +1,10 @@
 
 # Changelog
 
+## [2.3.12] - 2025-12-24
+### UI Polish
+- **Footer**: Migliorata la leggibilità del numero di versione in modalità chiara (aumentato il contrasto).
+
 ## [2.3.11] - 2025-12-24
 ### Fixes
 - **Footer**: La versione dell'app visualizzata nel footer ora si aggiorna automaticamente leggendo il file `package.json`.

@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
           <p className="text-xs text-slate-400">
             © {currentYear} PatenteOK. Tutti i diritti riservati.
           </p>
-          <p className="text-[10px] text-slate-300 font-mono">
+          <p className="text-[10px] text-slate-500 dark:text-slate-400 font-mono">
             v{appVersion}-beta
           </p>
         </div>
