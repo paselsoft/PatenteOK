@@ -1,6 +1,10 @@
 
 # Changelog
 
+## [2.3.11] - 2025-12-24
+### Fixes
+- **Footer**: La versione dell'app visualizzata nel footer ora si aggiorna automaticamente leggendo il file `package.json`.
+
 ## [2.3.10] - 2025-12-24
 ### UX Improvements
 - **Office Page**: Aggiunto il pulsante "Torna alla Home" che appare dopo aver confermato l'appuntamento, per facilitare la navigazione di ritorno.

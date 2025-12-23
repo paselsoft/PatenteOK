@@ -1,9 +1,10 @@
 
 import React from 'react';
+import packageJson from '../../package.json';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
-  const appVersion = "2.3.6"; // Idealmente letto da package.json o env
+  const appVersion = packageJson.version;
 
   return (
     // Aggiunto pb-32 per compensare l'altezza del bottone fisso in basso e l'area sicura
