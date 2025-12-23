@@ -1,8 +1,10 @@
 import React from 'react';
 import { Button } from './ui/Button';
 import { useApp } from '../context/AppContext';
+import { useNavigate } from 'react-router-dom';
 
 const OfficeInfo: React.FC = () => {
+  const navigate = useNavigate();
   const { profile, updateProfile } = useApp();
   const isBooked = profile.isAppointmentBooked;
 
@@ -76,8 +78,8 @@ const OfficeInfo: React.FC = () => {
           <button
             onClick={handleToggleBooking}
             className={`w-full py-3 rounded-xl flex items-center justify-center gap-2 text-sm font-bold transition-all ${isBooked
-                ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400'
-                : 'bg-slate-100 text-slate-600 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700'
+              ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400'
+              : 'bg-slate-100 text-slate-600 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700'
               }`}
           >
             <span className="material-symbols-rounded text-lg">
@@ -85,6 +87,18 @@ const OfficeInfo: React.FC = () => {
             </span>
             {isBooked ? 'Appuntamento Confermato' : 'Ho già prenotato'}
           </button>
+
+          {isBooked && (
+            <Button
+              variant="outline"
+              fullWidth
+              className="h-12 text-sm border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800"
+              icon="home"
+              onClick={() => navigate('/')}
+            >
+              Torna alla Home
+            </Button>
+          )}
         </div>
       </div>
     </div>

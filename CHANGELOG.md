@@ -1,6 +1,10 @@
 
 # Changelog
 
+## [2.3.10] - 2025-12-24
+### UX Improvements
+- **Office Page**: Aggiunto il pulsante "Torna alla Home" che appare dopo aver confermato l'appuntamento, per facilitare la navigazione di ritorno.
+
 ## [2.3.9] - 2025-12-24
 ### New Feature: Appointment Tracking
 Aggiunta la possibilità di confermare manualmente l'avvenuta prenotazione dell'appuntamento.
