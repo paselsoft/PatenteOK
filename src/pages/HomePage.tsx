@@ -2,6 +2,7 @@ import React from 'react';
 import { useApp } from '../context/AppContext';
 import { PageTransition } from '../components/PageTransition';
 import { Confetti } from '../components/Confetti';
+import { Alert } from '../components/ui/Alert';
 import { Link } from 'react-router-dom';
 
 export const HomePage: React.FC = () => {
@@ -13,6 +14,10 @@ export const HomePage: React.FC = () => {
     return (
         <PageTransition className="flex-1 max-w-2xl mx-auto w-full px-4 py-8 flex flex-col gap-8 pb-32">
             <Confetti trigger={progressPercent === 100} />
+
+            <Alert variant="info" title="Avviso Importante">
+                Per accedere allo sportello patenti della Motorizzazione Civile di Siena, è necessario prendere l'appuntamento su <a href="https://3327.easybook.cloud/#step-1" target="_blank" className="font-bold underline">questo portale</a>.
+            </Alert>
 
             {/* STATO DELLA DOMANDA */}
             <div className="bg-white dark:bg-slate-900 rounded-3xl p-6 flex items-center justify-between border border-slate-200 dark:border-slate-800 card-shadow transition-colors">
@@ -71,7 +76,7 @@ export const HomePage: React.FC = () => {
                         </div>
                         <h3 className="font-bold text-slate-800 dark:text-slate-200">Ufficio</h3>
                     </div>
-                    <p className="text-sm text-slate-500 dark:text-slate-400">Orari, contatti e informazioni utili.</p>
+                    <p className="text-sm text-slate-500 dark:text-slate-400">Orari, contatti e prenotazioni.</p>
                 </Link>
             </div>
 

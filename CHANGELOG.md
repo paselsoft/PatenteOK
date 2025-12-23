@@ -1,6 +1,21 @@
 
 # Changelog
 
+## [2.3.1] - 2025-12-23
+### UI Polish & Booking Integration
+Questa patch introduce miglioramenti mirati alla UX per la gestione degli appuntamenti e raffina l'interfaccia utente.
+
+### Nuove Funzionalità
+- **Integrazione EasyBook**:
+  - Aggiunto pulsante "Prenota Appuntamento" nella sezione Ufficio con link diretto al portale.
+  - Aggiunto **Alert Informativo** nella Home Page per avvisare gli utenti dell'obbligatorietà della prenotazione.
+  - Aggiornata la descrizione della card "Ufficio" in Home Page.
+
+### UI Improvements
+- **Office Info Card**:
+  - Redesign completo della card "Info Ufficio": icone in cerchi colorati, tipografia migliorata, rimozione intestazioni ridondanti.
+  - Correzione icona pulsante prenotazione (da testo a icona grafica `Rounded`).
+
 ## [2.3.0] - 2025-12-23
 ### Major Refactoring & Navigation
 Questa release introduce un routing reale multipagina e una struttura del progetto moderna e production-ready.

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from './ui/Button';
 
 const OfficeInfo: React.FC = () => {
   return (
@@ -13,25 +14,44 @@ const OfficeInfo: React.FC = () => {
         <p className="text-xl font-black text-slate-800 dark:text-slate-100 tracking-tight">SEZIONE COORDINATA DI SIENA</p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-        <div className="flex flex-col gap-2">
-          <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Indirizzo</p>
-          <div className="flex items-start gap-2">
-            <span className="material-symbols-rounded text-primary dark:text-blue-400 text-2xl">location_on</span>
-            <a href="#" className="text-[15px] font-black text-slate-800 dark:text-slate-200 underline decoration-slate-300 dark:decoration-slate-700 underline-offset-4">
-              Viale delle Regioni, 70<br />53100 Siena (SI)
-            </a>
+      <div className="flex flex-col gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+          <div className="flex flex-col gap-2">
+            <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Indirizzo</p>
+            <div className="flex items-start gap-3">
+              <div className="w-10 h-10 rounded-full bg-blue-50 dark:bg-blue-900/30 flex items-center justify-center text-primary dark:text-blue-400 shrink-0">
+                <span className="material-symbols-rounded">location_on</span>
+              </div>
+              <a href="#" className="text-[15px] font-bold text-slate-800 dark:text-slate-200 mt-2 hover:text-primary transition-colors">
+                Viale delle Regioni, 70<br />53100 Siena (SI)
+              </a>
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-2">
+            <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Contatti</p>
+            <div className="flex items-start gap-3">
+              <div className="w-10 h-10 rounded-full bg-blue-50 dark:bg-blue-900/30 flex items-center justify-center text-primary dark:text-blue-400 shrink-0">
+                <span className="material-symbols-rounded">call</span>
+              </div>
+              <a href="tel:057739941" className="text-[15px] font-bold text-slate-800 dark:text-slate-200 mt-2 hover:text-primary transition-colors">
+                0577/39941
+              </a>
+            </div>
           </div>
         </div>
 
-        <div className="flex flex-col gap-2">
-          <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Contatti</p>
-          <div className="flex items-center gap-2">
-            <span className="material-symbols-rounded text-primary dark:text-blue-400 text-2xl">call</span>
-            <a href="tel:057739941" className="text-[15px] font-black text-slate-800 dark:text-slate-200 underline decoration-slate-300 dark:decoration-slate-700 underline-offset-4">
-              0577/39941
-            </a>
-          </div>
+        <div className="pt-6 border-t border-slate-100 dark:border-slate-800">
+          <Button
+            variant="primary"
+            fullWidth
+            className="h-12 text-base shadow-lg shadow-blue-500/20"
+            icon="event"
+            onClick={() => window.open('https://3327.easybook.cloud/#step-1', '_blank')}
+          >
+            Prenota Appuntamento
+          </Button>
+          <p className="text-center text-[10px] uppercase font-bold text-slate-400 mt-3 tracking-widest">Portale EasyBook</p>
         </div>
       </div>
     </div>
