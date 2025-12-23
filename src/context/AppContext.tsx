@@ -68,16 +68,14 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       // 2. Mappa lo stato di completamento attuale
       const completionMap = new Map(prevDocs.map(d => [d.id, d.completed]));
 
-      // 3. Crea la nuova lista preservando i completamenti
+      // 3. Crea la nuova lista: PRENDE TUTTO da expectedDocs (statico fresco) e sovrascrive SOLO completed dallo stato precedente
       const nextDocs = expectedDocs.map(doc => ({
-        ...doc,
-        completed: completionMap.has(doc.id) ? completionMap.get(doc.id)! : false
+        ...doc, // Prendi titolo, subtitle, links, warningText aggiornati da constants
+        completed: completionMap.has(doc.id) ? completionMap.get(doc.id)! : false // Mantieni solo lo stato user
       }));
 
-      // 4. Optimization Check: Aggiorna SOLO se la lista è cambiata (evita loop)
-      const hasChanged =
-        prevDocs.length !== nextDocs.length ||
-        prevDocs.some((doc, index) => doc.id !== nextDocs[index].id);
+      // 4. Optimization Check: Aggiorna se la lista è cambiata (struttura o contenuto)
+      const hasChanged = JSON.stringify(prevDocs) !== JSON.stringify(nextDocs);
 
       return hasChanged ? nextDocs : prevDocs;
     });

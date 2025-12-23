@@ -47,6 +47,8 @@ export interface DocumentItem {
   warningText?: string;
   externalLink?: string;
   externalLinkText?: string;
+  guideUrl?: string; // Link per guide extra (es. MIT)
+  guideUrlText?: string;
 }
 
 export interface ProfileInfo {

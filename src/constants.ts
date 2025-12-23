@@ -30,6 +30,8 @@ export const INITIAL_DOCUMENTS: DocumentItem[] = [
     warningText: 'Attenzione: Il pagamento deve essere fatto obbligatoriamente a nome dell\'interessato (anche in caso di candidati minorenni), altrimenti la pratica non può essere accettata.',
     externalLink: 'https://www.ilportaledellautomobilista.it/web/portale-automobilista/loginspid',
     externalLinkText: "Accedi al Portale dell'Automobilista",
+    guideUrl: 'https://www.mit.gov.it/guida-pagamenti-pratiche-motorizzazione-con-pagopa',
+    guideUrlText: 'Guida MIT ai Pagamenti',
   },
   {
     id: DOCUMENT_IDS.MEDICAL_CERT,

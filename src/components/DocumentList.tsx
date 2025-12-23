@@ -95,6 +95,50 @@ const DocumentList: React.FC = () => {
               </div>
             )}
 
+            {/* Sub-content per PagoPA */}
+            {doc.id === DOCUMENT_IDS.PAGOPA && !doc.completed && (
+              <div className="px-5 pb-6 pt-0">
+                <div className="bg-slate-50 rounded-2xl p-4 flex flex-col gap-3">
+                  {doc.warningText && (
+                    <div className="flex items-start gap-3">
+                      <span className="material-symbols-rounded text-orange-500 text-xl">warning</span>
+                      <p className="text-[13px] font-black text-orange-800 leading-snug">
+                        {doc.warningText}
+                      </p>
+                    </div>
+                  )}
+
+                  <div className="flex flex-col gap-2 mt-1">
+                    {/* Link Portale */}
+                    {doc.externalLink && (
+                      <a
+                        href={doc.externalLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 text-primary text-[13px] font-black hover:underline px-1 transition-colors"
+                      >
+                        <span className="material-symbols-rounded text-lg">open_in_new</span>
+                        {doc.externalLinkText || "Apri collegamento"}
+                      </a>
+                    )}
+
+                    {/* Link Guida MIT */}
+                    {doc.guideUrl && (
+                      <a
+                        href={doc.guideUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 text-slate-500 hover:text-slate-700 text-[13px] font-medium hover:underline px-1 transition-colors"
+                      >
+                        <span className="material-symbols-rounded text-lg">menu_book</span>
+                        {doc.guideUrlText || "Consulta Guida Ufficiale"}
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </div>
+            )}
+
             {/* Guide espanse */}
             <AnimatePresence>
               {isExpanded && (

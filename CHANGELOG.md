@@ -1,6 +1,17 @@
 
 # Changelog
 
+## [2.3.7] - 2025-12-23
+### Fix: PagoPA Guide Link & Data Persistence
+Aggiunto collegamento alla guida ufficiale MIT per i versamenti PagoPA e risolto un bug di caching dei dati.
+
+### Improvements
+- **Documentation**: Aggiunto link diretto alla "Guida MIT ai Pagamenti" nella sezione **Versamenti PagoPA**.
+- **UX**: Visualizzazione migliorata dei link informativi nelle card dei documenti.
+
+### Bug Fixes
+- **Data Persistence**: Risolto un problema critico in `AppContext` dove le modifiche ai metadati dei documenti (es. nuovi link o descrizioni) venivano ignorate se la lista dei documenti era già cachata nel browser. Ora l'applicazione verifica correttamente il contenuto profondo dei dati.
+
 ## [2.3.6] - 2025-12-23
 ### UX: Home Page Progress Indicators
 Indicatori visivi di completamento (Passo 1, 2, 3) nella Home Page.
