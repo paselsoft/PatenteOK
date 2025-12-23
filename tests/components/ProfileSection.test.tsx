@@ -3,7 +3,7 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
 import ProfileSection from '../../src/components/ProfileSection';
 import { AppProvider } from '../../src/context/AppContext';
-import { CITIZENSHIP, LICENSE_CATEGORIES } from '../../src/types';
+import { LICENSE_CATEGORIES } from '../../src/types';
 
 // Mock hook per rule
 vi.mock('../../src/hooks/useLicenseRules', () => ({
