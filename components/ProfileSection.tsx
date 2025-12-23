@@ -3,9 +3,16 @@ import { useApp } from '../context/AppContext';
 import { Toggle } from './ui/Toggle';
 import { CITIZENSHIP, LICENSE_CATEGORIES, Citizenship, LicenseCategory } from '../types';
 import { Alert } from './ui/Alert';
+import { useLicenseRules } from '../hooks/useLicenseRules';
+import { useMemo } from 'react';
 
 const ProfileSection: React.FC = () => {
   const { profile, updateProfile } = useApp();
+  const { getRuleForCategory } = useLicenseRules();
+
+  const currentRule = useMemo(() => {
+    return getRuleForCategory(profile.licenseCategory);
+  }, [profile.licenseCategory, getRuleForCategory]);
 
   return (
     <div className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 card-shadow overflow-hidden flex flex-col transition-colors">
@@ -84,15 +91,33 @@ const ProfileSection: React.FC = () => {
           </div>
         )}
 
-        {/* VALIDATION WARNING: Minorenni + Cat B */}
-        {profile.isMinor && profile.licenseCategory === LICENSE_CATEGORIES.B && (
+        {/* DYNAMIC VALIDATION: Age Check */}
+        {profile.isMinor && currentRule && currentRule.minAge >= 18 && (
           <div className="mt-4">
             <Alert
               variant="warning"
               title="Requisito Età Non Soddisfatto"
             >
-              Per conseguire la patente di categoria B è necessario aver compiuto 18 anni.
+              Per conseguire la patente di categoria {profile.licenseCategory} è necessario aver compiuto {currentRule.minAge} anni.
             </Alert>
+          </div>
+        )}
+
+        {/* DYNAMIC INFO: Description */}
+        {currentRule && (
+          <div className="mt-4">
+            <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-100 dark:border-blue-800 rounded-xl p-4 flex gap-3">
+              <span className="material-symbols-rounded text-primary dark:text-blue-400 font-bold">info</span>
+              <div className="text-[13px] leading-relaxed">
+                <div className="flex justify-between items-center mb-1">
+                  <p className="font-black text-primary dark:text-blue-400">Info Categoria {profile.licenseCategory}</p>
+                  <span className="bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 text-[10px] font-bold px-2 py-0.5 rounded-full">
+                    {currentRule.minAge} Anni
+                  </span>
+                </div>
+                <p className="text-slate-600 dark:text-slate-300 font-medium">{currentRule.description}</p>
+              </div>
+            </div>
           </div>
         )}
       </div>

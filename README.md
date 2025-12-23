@@ -12,7 +12,7 @@ PatenteOK è un'applicazione web moderna e intuitiva progettata per aiutare gli 
   - **Confetti Celebration**: Festeggiamenti al completamento di tutti i requisiti!
 - **Gestione Profilo**: Configurazione dinamica per cittadini UE/Extra-UE e minorenni.
 - **Materiale Informativo**: Accesso diretto e scaricabile alla documentazione ufficiale (Tariffe, Circolari, Guide).
-- **Validazione Intelligente**: Sistema proattivo di avvisi basato sui regolamenti ufficiali (es. verifica età per categorie di patente).
+- **Validazione Dinamica**: Sistema che legge i regolamenti dai file markdown ufficiali per applicare in tempo reale i limiti di età e mostrare avvisi contestuali.
 - **Info Ufficio**: Dettagli sulla motorizzazione di riferimento e codice autoscuola.
 - **Generazione Domanda**: Pulsante d'azione per finalizzare la pratica una volta completati i requisiti obbligatori.
 

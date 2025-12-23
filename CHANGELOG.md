@@ -1,6 +1,21 @@
 
 # Changelog
 
+## [3.2.0] - 2025-12-23
+### Feature: Dynamic Validation & Info Box
+L'applicazione ora è in grado di leggere e interpretare dinamicamente i documenti di supporto.
+
+### Nuove Funzionalità
+- **Validazione Dinamica**:
+  - Implementato `LicenseRulesService` per il parsing in tempo reale del file `categorie_patente.md`.
+  - Le regole di età non sono più hardcoded ma estratte direttamente dalla documentazione ufficiale.
+- **Info Box Intelligente**:
+  - Il box informativo ora mostra un **badge "Età Minima"** (es. "18 Anni") estratto dinamicamente.
+  - La descrizione della categoria viene caricata dal markdown, garantendo che l'app sia sempre allineata ai documenti.
+
+### Technical
+- **Custom Hooks**: Introdotto `useLicenseRules` per gestire il fetching e caching delle regole di validazione.
+
 ## [3.1.0] - 2025-12-23
 ### Feature: Documentation & Smart Validation
 Questa release trasforma l'applicazione da un semplice tracker a uno strumento di guida intelligente, integrando fonti ufficiali e regole di business proattive.
