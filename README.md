@@ -3,6 +3,8 @@
 
 PatenteOK è un'applicazione web moderna e intuitiva progettata per aiutare gli aspiranti guidatori a gestire la burocrazia necessaria per l'ottenimento della patente di guida. L'interfaccia permette di monitorare i documenti necessari, gestire i pagamenti PagoPA e configurare il profilo del candidato.
 
+**[🚀 Live Demo Su Vercel](https://patente-ok.vercel.app/)**
+
 ## Funzionalità Principali
 
 - **Checklist Intelligente**: Monitoraggio in tempo reale dello stato dei documenti necessari (TT2112, Certificato Medico, etc.) con aggiornamenti automatici basati sul profilo (Cittadinanza, Età).

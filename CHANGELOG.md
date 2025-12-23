@@ -1,6 +1,11 @@
 
 # Changelog
 
+## [2.3.2] - 2025-12-23
+### Bugfix: Dark Mode Footer
+- Risolto un problema di rendering che mostrava una banda bianca a fondo pagina in modalità scura, causato da stili CSS legacy e classi hardcoded nel Footer.
+- Il Footer ora si adatta correttamente al tema (Sfondo: `bg-slate-50` / `dark:bg-slate-950`).
+
 ## [2.3.1] - 2025-12-23
 ### UI Polish & Booking Integration
 Questa patch introduce miglioramenti mirati alla UX per la gestione degli appuntamenti e raffina l'interfaccia utente.
