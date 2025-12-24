@@ -32,6 +32,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     isMinor: false,
     isDelegated: false,
     isAppointmentBooked: false,
+    appointmentDate: null,
   });
 
   // Persistenza Documenti

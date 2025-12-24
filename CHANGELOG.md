@@ -4,6 +4,12 @@
 ### Bug Fix: Version Sync
 Risolta discrepanza di versione tra footer della Home e menu laterale.
 
+## [2.4.19] - 2025-12-24
+### Feature: Save Appointment
+Aggiunta possibilità di salvare data e ora dell'appuntamento prenotato.
+- Nuova interfaccia di conferma nella pagina Ufficio.
+- Promemoria visibile nel riquadro verde della Home Page.
+
 ## [2.4.18] - 2025-12-24
 ### Bug Fix: Markdown Renderer
 Migliorato il motore di rendering testo per gestire correttamente:

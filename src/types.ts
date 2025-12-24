@@ -57,4 +57,5 @@ export interface ProfileInfo {
   isMinor: boolean;
   isDelegated: boolean;
   isAppointmentBooked?: boolean;
+  appointmentDate?: string | null;
 }

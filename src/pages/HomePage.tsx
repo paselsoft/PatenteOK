@@ -149,7 +149,22 @@ export const HomePage: React.FC = () => {
                             <h3 className="font-bold text-slate-800 dark:text-slate-200">Consegna allo Sportello</h3>
                         </div>
                         <p className="text-sm text-slate-500 dark:text-slate-400">
-                            {isAppointmentBooked ? 'Ottimo! Ricordati di portare tutti i documenti originali.' : 'Tutto pronto? Scopri orari e modalità per consegnare la pratica.'}
+                            {isAppointmentBooked && profile.appointmentDate ? (
+                                <>
+                                    Appuntamento confermato per il <strong className="text-slate-700 dark:text-slate-300">
+                                        {new Date(profile.appointmentDate).toLocaleString('it-IT', {
+                                            day: 'numeric',
+                                            month: 'long',
+                                            hour: '2-digit',
+                                            minute: '2-digit'
+                                        })}
+                                    </strong>
+                                </>
+                            ) : isAppointmentBooked ? (
+                                'Ottimo! Ricordati di portare tutti i documenti originali.'
+                            ) : (
+                                'Tutto pronto? Scopri orari e modalità per consegnare la pratica.'
+                            )}
                         </p>
                     </Link>
                 ) : (

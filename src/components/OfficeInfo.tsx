@@ -8,9 +8,40 @@ const OfficeInfo: React.FC = () => {
   const { profile, updateProfile } = useApp();
   const isBooked = profile.isAppointmentBooked;
 
-  const handleToggleBooking = () => {
-    updateProfile({ isAppointmentBooked: !isBooked });
+  const [isConfirming, setIsConfirming] = React.useState(false);
+  const [dateInput, setDateInput] = React.useState('');
+
+  const handleStartConfirmation = () => {
+    if (isBooked) {
+      // If already booked, allow unbooking (reset)
+      if (window.confirm('Vuoi cancellare la conferma dell\'appuntamento?')) {
+        updateProfile({ isAppointmentBooked: false, appointmentDate: null });
+      }
+    } else {
+      setIsConfirming(true);
+    }
   };
+
+  const handleConfirmDate = () => {
+    if (!dateInput) return;
+    updateProfile({
+      isAppointmentBooked: true,
+      appointmentDate: dateInput
+    });
+    setIsConfirming(false);
+  };
+
+  const formatDate = (dateString: string) => {
+    if (!dateString) return '';
+    const d = new Date(dateString);
+    return new Intl.DateTimeFormat('it-IT', {
+      day: 'numeric',
+      month: 'long',
+      hour: '2-digit',
+      minute: '2-digit'
+    }).format(d);
+  };
+
   return (
     <div className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 card-shadow p-6 flex flex-col gap-6 transition-colors">
       <div className="flex items-center gap-3 pb-4 border-b border-slate-100 dark:border-slate-800">
@@ -63,7 +94,7 @@ const OfficeInfo: React.FC = () => {
           </div>
         </div>
 
-        <div className="pt-6 border-t border-slate-100 dark:border-slate-800">
+        <div className="pt-6 border-t border-slate-100 dark:border-slate-800 space-y-4">
           <Button
             variant="primary"
             fullWidth
@@ -73,20 +104,66 @@ const OfficeInfo: React.FC = () => {
           >
             Prenota Appuntamento
           </Button>
-          <p className="text-center text-[10px] uppercase font-bold text-slate-400 mt-3 tracking-widest">Portale EasyBook</p>
 
-          <button
-            onClick={handleToggleBooking}
-            className={`w-full py-3 rounded-xl flex items-center justify-center gap-2 text-sm font-bold transition-all ${isBooked
-              ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400'
-              : 'bg-slate-100 text-slate-600 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700'
-              }`}
-          >
-            <span className="material-symbols-rounded text-lg">
-              {isBooked ? 'check_circle' : 'fingerprint'}
-            </span>
-            {isBooked ? 'Appuntamento Confermato' : 'Ho già prenotato'}
-          </button>
+          <div className="text-center relative py-2">
+            <div className="absolute inset-0 flex items-center">
+              <div className="w-full border-t border-slate-100 dark:border-slate-800"></div>
+            </div>
+            <div className="relative flex justify-center text-xs uppercase">
+              <span className="bg-white dark:bg-slate-900 px-2 text-slate-400 font-bold tracking-widest">Conferma</span>
+            </div>
+          </div>
+
+          {!isConfirming ? (
+            <button
+              onClick={handleStartConfirmation}
+              className={`w-full py-3 rounded-xl flex flex-col items-center justify-center gap-1 transition-all border ${isBooked
+                ? 'bg-green-50 border-green-200 text-green-700 dark:bg-green-900/20 dark:border-green-800 dark:text-green-400'
+                : 'bg-slate-50 border-slate-200 text-slate-500 hover:bg-slate-100 dark:bg-slate-800 dark:border-slate-700 dark:text-slate-400 dark:hover:bg-slate-700'
+                }`}
+            >
+              <div className="flex items-center gap-2 text-sm font-bold">
+                <span className="material-symbols-rounded text-lg">
+                  {isBooked ? 'check_circle' : 'fingerprint'}
+                </span>
+                {isBooked ? 'Appuntamento Confermato' : 'Ho già prenotato'}
+              </div>
+              {isBooked && profile.appointmentDate && (
+                <span className="text-xs font-medium opacity-80">
+                  {formatDate(profile.appointmentDate)}
+                </span>
+              )}
+            </button>
+          ) : (
+            <div className="bg-slate-50 dark:bg-slate-800/50 rounded-xl p-4 border border-slate-200 dark:border-slate-700 animate-in fade-in slide-in-from-top-2">
+              <p className="text-sm font-bold text-slate-700 dark:text-slate-300 mb-3 text-center">
+                Quando hai prenotato?
+              </p>
+              <input
+                type="datetime-local"
+                className="w-full p-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 mb-3 outline-none focus:ring-2 focus:ring-primary/50"
+                value={dateInput}
+                onChange={(e) => setDateInput(e.target.value)}
+              />
+              <div className="flex gap-2">
+                <Button
+                  variant="ghost"
+                  className="flex-1 h-10 text-xs"
+                  onClick={() => setIsConfirming(false)}
+                >
+                  Annulla
+                </Button>
+                <Button
+                  variant="primary"
+                  className="flex-1 h-10 text-xs"
+                  disabled={!dateInput}
+                  onClick={handleConfirmDate}
+                >
+                  Conferma Data
+                </Button>
+              </div>
+            </div>
+          )}
 
           {isBooked && (
             <Button
