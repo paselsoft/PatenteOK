@@ -5,6 +5,7 @@ import { CITIZENSHIP, LICENSE_CATEGORIES, Citizenship, LicenseCategory } from '.
 import { Alert } from './ui/Alert';
 import { useLicenseRules } from '../hooks/useLicenseRules';
 import { useMemo } from 'react';
+import { SimpleMarkdown } from './ui/SimpleMarkdown';
 
 const ProfileSection: React.FC = () => {
   const { profile, updateProfile } = useApp();
@@ -118,7 +119,9 @@ const ProfileSection: React.FC = () => {
                     {currentRule.minAge} Anni
                   </span>
                 </div>
-                <p className="text-slate-600 dark:text-slate-300 font-medium">{currentRule.description}</p>
+                <div className="text-slate-600 dark:text-slate-300">
+                  <SimpleMarkdown content={currentRule.description} />
+                </div>
               </div>
             </div>
           </div>

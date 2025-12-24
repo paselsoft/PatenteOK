@@ -4,6 +4,11 @@
 ### Bug Fix: Version Sync
 Risolta discrepanza di versione tra footer della Home e menu laterale.
 
+## [2.4.16] - 2025-12-24
+### Bug Fix: License Info Display
+- Riabilitata visualizzazione Categoria A (supporto regole multi-riga).
+- Migliorata formattazione testo (supporto Liste e Grassetto nelle descrizioni).
+
 ## [2.4.15] - 2025-12-24
 ### Internal: Content Parser
 Aggiornato il motore di lettura delle regole patente per supportare il nuovo formato dei documenti (Headers/Liste).
