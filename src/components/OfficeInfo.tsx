@@ -12,13 +12,20 @@ const OfficeInfo: React.FC = () => {
   const [dateInput, setDateInput] = React.useState('');
 
   const handleStartConfirmation = () => {
-    if (isBooked) {
-      // If already booked, allow unbooking (reset)
-      if (window.confirm('Vuoi cancellare la conferma dell\'appuntamento?')) {
-        updateProfile({ isAppointmentBooked: false, appointmentDate: null });
-      }
+    if (isBooked && profile.appointmentDate) {
+      // If already booked, open edit mode with current date
+      setDateInput(profile.appointmentDate);
+      setIsConfirming(true);
     } else {
       setIsConfirming(true);
+    }
+  };
+
+  const handleCancelAppointment = () => {
+    if (window.confirm('Sei sicuro di voler cancellare la conferma?')) {
+      updateProfile({ isAppointmentBooked: false, appointmentDate: null });
+      setIsConfirming(false);
+      setDateInput('');
     }
   };
 
@@ -63,9 +70,19 @@ const OfficeInfo: React.FC = () => {
               <div className="w-10 h-10 rounded-full bg-blue-50 dark:bg-blue-900/30 flex items-center justify-center text-primary dark:text-blue-400 shrink-0">
                 <span className="material-symbols-rounded">location_on</span>
               </div>
-              <a href="#" className="text-[15px] font-bold text-slate-800 dark:text-slate-200 mt-2 hover:text-primary transition-colors">
-                Viale delle Regioni, 70<br />53100 Siena (SI)
-              </a>
+              <div>
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Ufficio+Provinciale+della+Motorizzazione+Civile+Siena"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[15px] font-bold text-slate-800 dark:text-slate-200 hover:text-primary transition-colors block"
+                >
+                  Viale delle Regioni, 70<br />53100 Siena (SI)
+                </a>
+                <span className="text-[11px] font-mono text-slate-400 dark:text-slate-500 mt-1 block select-all">
+                  43.3439, 11.3112
+                </span>
+              </div>
             </div>
           </div>
 
@@ -125,9 +142,9 @@ const OfficeInfo: React.FC = () => {
             >
               <div className="flex items-center gap-2 text-sm font-bold">
                 <span className="material-symbols-rounded text-lg">
-                  {isBooked ? 'check_circle' : 'fingerprint'}
+                  {isBooked ? 'edit_calendar' : 'fingerprint'}
                 </span>
-                {isBooked ? 'Appuntamento Confermato' : 'Ho già prenotato'}
+                {isBooked ? 'Modifica Appuntamento' : 'Ho già prenotato'}
               </div>
               {isBooked && profile.appointmentDate && (
                 <span className="text-xs font-medium opacity-80">
@@ -138,7 +155,7 @@ const OfficeInfo: React.FC = () => {
           ) : (
             <div className="bg-slate-50 dark:bg-slate-800/50 rounded-xl p-4 border border-slate-200 dark:border-slate-700 animate-in fade-in slide-in-from-top-2">
               <p className="text-sm font-bold text-slate-700 dark:text-slate-300 mb-3 text-center">
-                Quando hai prenotato?
+                {isBooked ? 'Modifica Data Appuntamento' : 'Quando hai prenotato?'}
               </p>
               <input
                 type="datetime-local"
@@ -150,17 +167,29 @@ const OfficeInfo: React.FC = () => {
                 <Button
                   variant="ghost"
                   className="flex-1 h-10 text-xs"
-                  onClick={() => setIsConfirming(false)}
+                  onClick={() => {
+                    setIsConfirming(false);
+                    setDateInput('');
+                  }}
                 >
                   Annulla
                 </Button>
+                {isBooked && (
+                  <Button
+                    variant="outline"
+                    className="flex-1 h-10 text-xs text-red-500 border-red-200 hover:bg-red-50"
+                    onClick={handleCancelAppointment}
+                  >
+                    Cancella
+                  </Button>
+                )}
                 <Button
                   variant="primary"
                   className="flex-1 h-10 text-xs"
                   disabled={!dateInput}
                   onClick={handleConfirmDate}
                 >
-                  Conferma Data
+                  {isBooked ? 'Aggiorna' : 'Conferma'}
                 </Button>
               </div>
             </div>

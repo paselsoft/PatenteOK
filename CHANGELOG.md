@@ -4,6 +4,11 @@
 ### Bug Fix: Version Sync
 Risolta discrepanza di versione tra footer della Home e menu laterale.
 
+## [2.4.21] - 2025-12-25
+### UX Improvements
+- **Office Page**: Migliorato flusso modifica/cancellazione appuntamento (Edit Mode).
+- **Mappe**: Link diretto alla Motorizzazione e visualizzazione coordinate GPS.
+
 ## [2.4.20] - 2025-12-25
 ### UI Polish
 - Corretta formattazione date (anno incluso) in Home e Ufficio.
