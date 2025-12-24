@@ -1,6 +1,13 @@
 
 # Changelog
 
+## [2.4.9] - 2025-12-24
+### UI Improvement: Dynamic Home Alert
+L'avviso in Home Page cambia dinamicamente in base allo stato della pratica.
+
+### Improvements
+- **Home Alert**: Quando tutti i documenti sono pronti (100%), l'avviso blu "Non prenotare ancora" diventa verde "Tutto Pronto!", confermando all'utente che può procedere con la prenotazione.
+
 ## [2.4.8] - 2025-12-24
 ### Feature: Sequential Step Enforcement
 Implementato il blocco sequenziale dei passaggi per guidare l'utente nell'ordine corretto.

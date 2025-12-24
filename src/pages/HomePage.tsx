@@ -22,9 +22,15 @@ export const HomePage: React.FC = () => {
         <PageTransition className="flex-1 max-w-2xl mx-auto w-full px-4 py-8 flex flex-col gap-8 pb-32">
             <Confetti trigger={progressPercent === 100} />
 
-            <Alert variant="info" title="Accesso allo Sportello">
-                Non prenotare ancora! Prima prepariamo insieme i documenti, poi ti daremo il link per l'appuntamento.
-            </Alert>
+            {isStep3Ready ? (
+                <Alert variant="success" title="Tutto Pronto!">
+                    Hai completato tutti i passaggi! Ora puoi <strong>prenotare il tuo appuntamento</strong> cliccando sul riquadro "Consegna allo Sportello" qui sotto.
+                </Alert>
+            ) : (
+                <Alert variant="info" title="Accesso allo Sportello">
+                    Non prenotare ancora! Prima prepariamo insieme i documenti, poi ti daremo il link per l'appuntamento.
+                </Alert>
+            )}
 
             {/* STATO DELLA DOMANDA */}
             <div className="bg-white dark:bg-slate-900 rounded-3xl p-6 flex items-center justify-between border border-slate-200 dark:border-slate-800 card-shadow transition-colors">
