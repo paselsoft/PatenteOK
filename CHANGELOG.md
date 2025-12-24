@@ -1,6 +1,16 @@
 
 # Changelog
 
+## [2.4.3] - 2025-12-24
+### Fix: Minor Delegation Instructions
+Corrette le istruzioni nel "Kit Delega" per i candidati minorenni.
+
+### Bug Fixes
+- **Delegate Guide**: Se il candidato è minorenne, la guida ora specifica correttamente che:
+  - È il **genitore/tutore** a dover delegare, non il candidato.
+  - È richiesta la doppia firma sul modello TT2112.
+  - È necessario allegare il documento d'identità del genitore delegante.
+
 ## [2.4.2] - 2025-12-24
 ### UX Enhancement: Wording
 Migliorata la chiarezza delle descrizioni opzionali nella configurazione profilo.
