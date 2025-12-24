@@ -90,9 +90,23 @@ export const Sidebar: React.FC = () => {
           </ul>
         </nav>
 
-        <div className="p-6 border-t border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50 rounded-br-3xl">
+        <div className="p-6 border-t border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50 rounded-br-3xl flex flex-col gap-4">
+          <button
+            onClick={() => {
+              if (window.confirm('Sei sicuro di voler resettare tutti i dati? La procedura ricomincerà da zero.')) {
+                localStorage.clear();
+                sessionStorage.clear();
+                window.location.href = '/';
+              }
+            }}
+            className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-red-600 bg-red-50 hover:bg-red-100 dark:bg-red-900/20 dark:hover:bg-red-900/30 dark:text-red-400 transition-colors text-[13px] font-bold"
+          >
+            <span className="material-symbols-rounded text-lg">delete_history</span>
+            Reset Dati App
+          </button>
+
           <p className="text-xs text-center text-slate-400 font-medium">
-            PatenteOK v2.3.0<br />© 2025
+            PatenteOK v2.4.10<br />© 2025
           </p>
         </div>
       </div>

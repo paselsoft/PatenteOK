@@ -1,6 +1,13 @@
 
 # Changelog
 
+## [2.4.11] - 2025-12-24
+### Feature: App Reset
+Aggiunta opzione per resettare l'applicazione.
+
+### Improvements
+- **Sidebar**: Aggiunto un pulsante rosso "Reset Dati App" in fondo al menu laterale. Questo permette di cancellare tutti i dati salvati e ricominciare la procedura da zero, utile in caso di errori o per testare nuovamente il flusso.
+
 ## [2.4.10] - 2025-12-24
 ### UX Fix: Documents Page Navigation
 Migliorato il flusso di navigazione dalla pagina documenti.
