@@ -22,13 +22,13 @@ export const DocumentsPage: React.FC = () => {
 
             <section className="mt-4">
                 <Button
-                    onClick={() => navigate('/office')}
-                    icon="calendar_month"
+                    onClick={() => navigate('/')}
+                    icon={isReadyToSubmit ? 'check_circle' : 'home'}
                     fullWidth
-                    variant={isReadyToSubmit ? 'primary' : 'secondary'}
+                    variant={isReadyToSubmit ? 'primary' : 'outline'}
                     className={`h-14 text-lg shadow-xl ${isReadyToSubmit ? 'shadow-blue-500/30' : ''}`}
                 >
-                    {isReadyToSubmit ? 'Tutto Pronto: Prenota Appuntamento' : 'Completa la Checklist per Procedere'}
+                    {isReadyToSubmit ? 'Torna alla Dashboard' : 'Torna alla Dashboard'}
                 </Button>
                 {!isReadyToSubmit && (
                     <p className="text-center text-xs text-slate-400 mt-3">

@@ -1,6 +1,13 @@
 
 # Changelog
 
+## [2.4.10] - 2025-12-24
+### UX Fix: Documents Page Navigation
+Migliorato il flusso di navigazione dalla pagina documenti.
+
+### Bug Fixes
+- **Documents Page**: Il pulsante di fine checklist ora riporta sempre alla Dashboard ("Torna alla Dashboard") invece di mandare prematuramente alla pagina Ufficio. Questo permette all'utente di vedere lo stato aggiornato e il messaggio di successo prima di procedere.
+
 ## [2.4.9] - 2025-12-24
 ### UI Improvement: Dynamic Home Alert
 L'avviso in Home Page cambia dinamicamente in base allo stato della pratica.
