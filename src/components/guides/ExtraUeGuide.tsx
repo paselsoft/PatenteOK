@@ -33,19 +33,29 @@ export const ExtraUeGuide: React.FC<ExtraUeGuideProps> = ({ onComplete }) => {
             <span className="material-symbols-rounded text-[16px] text-green-600 mt-0.5">check_circle</span>
             <span className="text-secondary-text"><strong>Permesso Soggiornanti Lungo Periodo</strong> UE</span>
           </div>
-          <div className="flex items-start gap-2">
-            <span className="material-symbols-rounded text-[16px] text-orange-600 mt-0.5">warning</span>
-            <div className="flex flex-col">
-              <span className="font-bold text-orange-800">Se permesso in rinnovo:</span>
-              <span className="text-secondary-text">Ricevuta postale/Questura + Copia permesso scaduto.</span>
+
+          {/* Section Ricevute */}
+          <div className="flex items-start gap-2 bg-blue-50 p-2 rounded border border-blue-100 mt-2">
+            <span className="material-symbols-rounded text-[16px] text-blue-600 mt-0.5">info</span>
+            <div className="flex flex-col gap-1">
+              <span className="font-bold text-blue-900">Validità Ricevute (Circolari MIT):</span>
+              <span className="text-[11px] text-blue-800 leading-snug">
+                Sono valide le ricevute postali/Questura di <strong>primo rilascio</strong> o <strong>rinnovo</strong> (Mod. 22AO).
+                <br />
+                <span className="italic opacity-80">La ricevuta Mod. 22AO ha validità di 9 mesi dall'accettazione.</span>
+              </span>
             </div>
           </div>
-          <div className="flex items-start gap-2">
-            <span className="material-symbols-rounded text-[16px] text-orange-600 mt-0.5">warning</span>
-            <div className="flex flex-col">
-              <span className="font-bold text-orange-800">Se primo rilascio:</span>
-              <span className="text-secondary-text">Basta la ricevuta postale/Questura.</span>
-            </div>
+
+          <div className="pt-2 border-t border-slate-200 mt-2">
+            <p className="text-[11px] text-secondary-text font-medium mb-1">
+              <span className="material-symbols-rounded text-[14px] align-bottom mr-1">child_care</span>
+              Obbligatorio anche per candidati minorenni.
+            </p>
+            <p className="text-[11px] text-secondary-text">
+              <span className="material-symbols-rounded text-[14px] align-bottom mr-1">volunteer_activism</span>
+              <strong>Richiedenti Asilo/Umanitari:</strong> Devono comprovare l'acquisizione della residenza in Italia.
+            </p>
           </div>
         </div>
       </GuideStep>

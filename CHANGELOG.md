@@ -1,6 +1,16 @@
 
 # Changelog
 
+## [2.4.6] - 2025-12-24
+### Enhancement: Extra UE Residence Rules
+Aggiornata la guida Extra-UE con la normativa dettagliata sul soggiorno.
+
+### Improvements
+- **Extra UE Guide**:
+  - Aggiunti dettagli sulla validità delle **Ricevute (Mod. 22AO)**: 9 mesi dall'accettazione (Circolari MIT).
+  - Specificato che il documento di soggiorno è **obbligatorio anche per i minori**.
+  - Aggiunta nota specifica per **Richiedenti Asilo/Umanitari** sull'obbligo di residenza.
+
 ## [2.4.5] - 2025-12-24
 ### Enhancement: Identity Documents
 Ampliata la lista dei documenti di riconoscimento validi e aggiunte specifiche sulla ricevuta CIE.
