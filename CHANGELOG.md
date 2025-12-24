@@ -1,6 +1,13 @@
 
 # Changelog
 
+## [2.4.12] - 2025-12-24
+### Bug Fix: Profile Validation
+Risolto bug che permetteva di avanzare con profilo incompleto.
+
+### Bug Fixes
+- **Profile Page**: Il pulsante "Salva e Vai ai Documenti" ora rimane disabilitato finché non viene selezionata sia la cittadinanza che la categoria della patente.
+
 ## [2.4.11] - 2025-12-24
 ### Feature: App Reset
 Aggiunta opzione per resettare l'applicazione.

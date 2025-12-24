@@ -12,6 +12,7 @@ export const ProfilePage: React.FC = () => {
     const { getRuleForCategory } = useLicenseRules();
 
     const isAgeInvalid = useMemo(() => {
+        if (!profile.licenseCategory) return false;
         const currentRule = getRuleForCategory(profile.licenseCategory);
         return Boolean(profile.isMinor && currentRule && currentRule.minAge >= 18);
     }, [profile.licenseCategory, profile.isMinor, getRuleForCategory]);
@@ -28,7 +29,7 @@ export const ProfilePage: React.FC = () => {
                     onClick={() => navigate('/documents')}
                     icon="arrow_forward"
                     fullWidth
-                    disabled={isAgeInvalid}
+                    disabled={isAgeInvalid || !profile.citizenship || !profile.licenseCategory}
                     className="h-12 text-base shadow-lg shadow-blue-500/20"
                 >
                     Salva e Vai ai Documenti
