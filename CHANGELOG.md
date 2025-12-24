@@ -1,6 +1,13 @@
 
 # Changelog
 
+## [2.4.14] - 2025-12-24
+### New Feature: Quick Reset
+Aggiunta scorciatoia per il reset nella barra di navigazione in alto.
+
+### Features
+- **Header**: Aggiunta icona "Reset" (storico) accanto al toggle del tema. Permette di resettare l'app senza aprire il menu laterale. Mantiene la stessa sicurezza (doppia conferma) del menu.
+
 ## [2.4.13] - 2025-12-24
 ### UX Improvement: Safer Reset
 Migliorata esperienza di reset dell'applicazione.

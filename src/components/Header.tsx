@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useApp } from '../context/AppContext';
 import { useLocalStorage } from '../hooks/useLocalStorage';
 import { Link } from 'react-router-dom';
+import { ResetConfirmationButton } from './ui/ResetConfirmationButton';
 
 const Header: React.FC = () => {
   const { toggleSidebar } = useApp();
@@ -32,6 +33,7 @@ const Header: React.FC = () => {
         </Link>
       </div>
       <div className="flex items-center gap-2">
+        <ResetConfirmationButton variant="icon" className="mr-1 bg-red-50 hover:bg-red-100 dark:bg-red-900/20 dark:hover:bg-red-900/40" />
         <button
           onClick={toggleTheme}
           className="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-yellow-400 flex items-center justify-center transition-colors"
