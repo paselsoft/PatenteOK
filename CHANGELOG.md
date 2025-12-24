@@ -1,6 +1,14 @@
 
 # Changelog
 
+## [2.4.4] - 2025-12-24
+### Fix: Minor Guide Content & Copy Requirements
+Risolta l'assenza di contenuti nella sezione cittadinanza e corretti i requisiti documentali per i minori.
+
+### Bug Fixes
+- **Minor Guide**: La sezione "Specifiche per Cittadinanza" ora appare correttamente popolata in base alla nazionalità selezionata (era vuota per mancanza di props).
+- **Document Requirements**: Aggiornata la checklist per richiedere solo le **copie** dei documenti d'identità (Minore e Genitore), rimuovendo la richiesta degli originali in questa fase.
+
 ## [2.4.3] - 2025-12-24
 ### Fix: Minor Delegation Instructions
 Corrette le istruzioni nel "Kit Delega" per i candidati minorenni.

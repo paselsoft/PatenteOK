@@ -12,7 +12,7 @@ import { DelegateGuide } from './guides/DelegateGuide';
 import { MinorGuide } from './guides/MinorGuide';
 
 const DocumentList: React.FC = () => {
-  const { documents, toggleDocument } = useApp();
+  const { documents, toggleDocument, profile } = useApp();
   const [expandedId, setExpandedId] = useState<string | null>(null);
 
   const handleToggle = (id: string, e: React.MouseEvent) => {
@@ -33,7 +33,13 @@ const DocumentList: React.FC = () => {
       case DOCUMENT_IDS.DELEGATE_KIT:
         return <DelegateGuide onComplete={handleComplete} />;
       case DOCUMENT_IDS.MINOR_GUIDE:
-        return <MinorGuide onComplete={handleComplete} />;
+        return (
+          <MinorGuide
+            onComplete={handleComplete}
+            citizenship={profile.citizenship}
+            licenseCategory={profile.licenseCategory}
+          />
+        );
       default:
         // Fallback generico per documenti senza guida specifica (es. Bollettini se non hanno guida)
         return null;
