@@ -1,6 +1,13 @@
 
 # Changelog
 
+## [2.4.1] - 2025-12-24
+### Hotfix: Validation Blocking
+Risolta una criticità nella validazione dei requisiti d'età che permetteva di proseguire anche con configurazioni non valide.
+
+### Bug Fixes
+- **Profile Page**: Il pulsante "Salva e Vai ai Documenti" ora viene correttamente disabilitato se il candidato non soddisfa i requisiti minimi di età per la categoria selezionata (es. Minorenne + C1E).
+
 ## [2.4.0] - 2025-12-24
 ### Engineering: CI/CD & Testing
 Migliorata significativamente la pipeline di sviluppo e la copertura dei test per garantire stabilità a lungo termine.

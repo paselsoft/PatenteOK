@@ -1,11 +1,20 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ProfileSection from '../components/ProfileSection';
 import { PageTransition } from '../components/PageTransition';
 import { Button } from '../components/ui/Button';
+import { useApp } from '../context/AppContext';
+import { useLicenseRules } from '../hooks/useLicenseRules';
 
 export const ProfilePage: React.FC = () => {
     const navigate = useNavigate();
+    const { profile } = useApp();
+    const { getRuleForCategory } = useLicenseRules();
+
+    const isAgeInvalid = useMemo(() => {
+        const currentRule = getRuleForCategory(profile.licenseCategory);
+        return Boolean(profile.isMinor && currentRule && currentRule.minAge >= 18);
+    }, [profile.licenseCategory, profile.isMinor, getRuleForCategory]);
 
     return (
         <PageTransition className="flex-1 max-w-2xl mx-auto w-full px-4 py-8 pb-32">
@@ -19,6 +28,7 @@ export const ProfilePage: React.FC = () => {
                     onClick={() => navigate('/documents')}
                     icon="arrow_forward"
                     fullWidth
+                    disabled={isAgeInvalid}
                     className="h-12 text-base shadow-lg shadow-blue-500/20"
                 >
                     Salva e Vai ai Documenti
