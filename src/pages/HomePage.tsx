@@ -22,7 +22,11 @@ export const HomePage: React.FC = () => {
         <PageTransition className="flex-1 max-w-2xl mx-auto w-full px-4 py-8 flex flex-col gap-8 pb-32">
             <Confetti trigger={progressPercent === 100} />
 
-            {isStep3Ready ? (
+            {isAppointmentBooked ? (
+                <Alert variant="success" title="Appuntamento Confermato!">
+                    Ottimo lavoro! La tua pratica è pronta per essere consegnata allo sportello. Ricorda i documenti originali!
+                </Alert>
+            ) : isStep3Ready ? (
                 <Alert variant="success" title="Tutto Pronto!">
                     Hai completato tutti i passaggi! Ora puoi <strong>prenotare il tuo appuntamento</strong> cliccando sul riquadro "Consegna allo Sportello" qui sotto.
                 </Alert>
@@ -155,6 +159,7 @@ export const HomePage: React.FC = () => {
                                         {new Date(profile.appointmentDate).toLocaleString('it-IT', {
                                             day: 'numeric',
                                             month: 'long',
+                                            year: 'numeric',
                                             hour: '2-digit',
                                             minute: '2-digit'
                                         })}

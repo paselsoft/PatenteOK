@@ -37,6 +37,7 @@ const OfficeInfo: React.FC = () => {
     return new Intl.DateTimeFormat('it-IT', {
       day: 'numeric',
       month: 'long',
+      year: 'numeric',
       hour: '2-digit',
       minute: '2-digit'
     }).format(d);
