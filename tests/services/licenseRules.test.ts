@@ -3,54 +3,55 @@ import { fetchLicenseRules, parseLicenseMarkdown } from '../../src/services/lice
 
 describe('LicenseRules Service', () => {
     describe('parseLicenseMarkdown', () => {
-        it('should correctly parse a valid markdown table', () => {
+        it('should correctly parse the new header-based format', () => {
             const markdown = `
-| Categoria | Età Minima | Note |
-|---|---|---|
-| **AM** | **14 anni** | Ciclomotori |
-| **A1** | **16 anni** | [cite_start]Link[cite: link] Moto leggere |
+# Categorie di Patente
+
+## Categoria AM
+
+* **Età minima richiesta:** 14 anni.
+* Descrizione lunga...
+
+## Categoria A1
+
+* **Età minima richiesta:** 16 anni.
+* Altra descrizione...
             `;
             const result = parseLicenseMarkdown(markdown);
             expect(result).toHaveLength(2);
             expect(result[0]).toEqual({
                 category: 'AM',
                 minAge: 14,
-                description: 'Ciclomotori'
+                description: expect.stringContaining('Descrizione lunga')
             });
             expect(result[1]).toEqual({
                 category: 'A1',
                 minAge: 16,
-                description: 'Link Moto leggere'
+                description: expect.stringContaining('Altra descrizione')
             });
         });
 
-        it('should ignore header and separator lines', () => {
+        it('should parse age correctly from complex strings', () => {
             const markdown = `
-| Categoria | Età |
-|---|---|
-| B | 18 anni | Auto |
+## Categoria A
+
+* **Età minima richiesta:** 24 anni (20 se..).
             `;
-            const result = parseLicenseMarkdown(markdown);
-            expect(result).toHaveLength(1);
-            expect(result[0].category).toBe('B');
-            expect(result[0].minAge).toBe(18);
-        });
-
-        it('should handle missing columns gracefully', () => {
-            const markdown = `| AM | 14 anni |`; // Only 2 cols
-            const result = parseLicenseMarkdown(markdown);
-            expect(result).toHaveLength(0); // Code checks for >= 3 columns
-        });
-
-        it('should parse age correctly from string', () => {
-            const markdown = `| A | 24 anni (20 con accesso graduale) | Moto |`;
             const result = parseLicenseMarkdown(markdown);
             expect(result[0].minAge).toBe(24);
         });
 
-        it('should handle empty or malformed input', () => {
+        it('should ignore sections without Category header', () => {
+            const markdown = `
+# Titolo Principale
+Intro...
+            `;
+            const result = parseLicenseMarkdown(markdown);
+            expect(result).toHaveLength(0);
+        });
+
+        it('should handle empty input', () => {
             expect(parseLicenseMarkdown('')).toEqual([]);
-            expect(parseLicenseMarkdown('Not a table')).toEqual([]);
         });
     });
 
@@ -66,7 +67,11 @@ describe('LicenseRules Service', () => {
         });
 
         it('should fetch and parse rules successfully', async () => {
-            const mockMarkdown = '| **B** | **18 anni** | Auto |';
+            const mockMarkdown = `
+## Categoria B
+
+* **Età minima richiesta:** 18 anni.
+            `;
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             (global.fetch as any).mockResolvedValue({
                 ok: true,

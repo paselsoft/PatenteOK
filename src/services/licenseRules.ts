@@ -24,38 +24,37 @@ export const fetchLicenseRules = async (): Promise<LicenseRule[]> => {
 
 export const parseLicenseMarkdown = (markdown: string): LicenseRule[] => {
     const rules: LicenseRule[] = [];
-    const lines = markdown.split('\n');
 
-    for (const line of lines) {
-        const trimmedLine = line.trim();
-        // Identifica le righe della tabella (iniziano e finiscono con |)
-        if (!trimmedLine.startsWith('|') || !trimmedLine.endsWith('|')) continue;
+    // Divide il contenuto per sezioni "## Categoria"
+    // L'utilizzo di 'split' con una regex che include il gruppo di cattura (per mantenere il separatore se necessario o gestire meglio)
+    // In questo caso splittiamo semplicemente per "## Categoria" e gestiamo il primo elemento vuoto
+    const sections = markdown.split(/## Categoria\s+/);
 
-        // Ignora le righe di intestazione o separazione
-        if (trimmedLine.includes('---') || trimmedLine.toLowerCase().includes('categoria')) continue;
+    for (const section of sections) {
+        // Ignora sezioni vuote o introspettive che non sembrano categorie
+        if (!section.trim() || section.includes('# Categorie di Patente')) continue;
 
-        const columns = trimmedLine.split('|').map(col => col.trim()).filter(col => col !== '');
+        // La prima riga è il nome della categoria (es. "AM" o "AM\n")
+        const lines = section.trim().split('\n');
+        const categoryLine = lines[0].trim();
 
-        if (columns.length >= 3) {
-            // Colonna 1: Categoria (es. **AM**)
-            const category = columns[0].replace(/\*\*/g, '').trim();
+        // Pulizia del nome categoria (rimuove eventuali caratteri extra)
+        const category = categoryLine.split(' ')[0].trim();
 
-            // Colonna 2: Età Minima (es. **14 anni**)
-            const ageString = columns[1].replace(/\*\*/g, '').trim();
-            const minAge = parseInt(ageString.match(/\d+/)?.[0] || '0', 10);
+        if (category) {
+            // Cerca l'età minima nel testo della sezione
+            const ageMatch = section.match(/Età minima richiesta:.*?(\d+)\s*anni/i);
+            const minAge = ageMatch ? parseInt(ageMatch[1], 10) : 0;
 
-            // Colonna 3: Descrizione (pulizia citazioni)
-            // Rimuove [cite_start]...[cite: ...]
-            const description = columns[2]
-                .replace(/\[cite_start\]/g, '')
-                .replace(/\[cite:.*?\]/g, '')
-                .trim();
+            // La descrizione è tutto il resto della sezione, pulita un po'
+            // Rimuoviamo la prima riga (categoria) e uniamo il resto
+            const description = lines.slice(1).join('\n').trim();
 
-            if (category && minAge > 0) {
+            if (minAge > 0) {
                 rules.push({
                     category,
                     minAge,
-                    description
+                    description // Mantiamo il markdown originale per la descrizione
                 });
             }
         }

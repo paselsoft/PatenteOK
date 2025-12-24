@@ -4,6 +4,10 @@
 ### Bug Fix: Version Sync
 Risolta discrepanza di versione tra footer della Home e menu laterale.
 
+## [2.4.15] - 2025-12-24
+### Internal: Content Parser
+Aggiornato il motore di lettura delle regole patente per supportare il nuovo formato dei documenti (Headers/Liste).
+
 ## [2.4.14] - 2025-12-24
 ### New Feature: Quick Reset
 Aggiunta scorciatoia per il reset nella barra di navigazione in alto.

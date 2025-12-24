@@ -1,19 +1,208 @@
-| Categoria | Età Minima | Descrizione |
-|---|---|---|
-| **AM** | **14 anni** | Ciclomotori a 2 o 3 ruote con velocità massima non superiore a 45 km/h, motore ≤ 50cc (o ≤ 4kW se elettrici). Quadricicli leggeri. |
-| **A1** | **16 anni** | Motocicli di cilindrata massima 125cc, potenza massima 11 kW e rapporto potenza/peso non superiore a 0,1 kW/kg. Tricicli fino a 15 kW. |
-| **A2** | **18 anni** | Motocicli di potenza non superiore a 35 kW e rapporto potenza/peso non superiore a 0,2 kW/kg. Non derivati da versione che sviluppa oltre il doppio della potenza massima. |
-| **A** | **24 anni** | Motocicli senza limitazioni di cilindrata e potenza. (Accesso graduale a 20 anni se titolare di A2 da almeno 2 anni). |
-| **B1** | **16 anni** | Quadricicli non leggeri (massa a vuoto ≤ 400kg o 550kg merci), potenza massima 15 kW. |
-| **B** | **18 anni** | Autoveicoli fino a 3500 kg di massa massima autorizzata e progettati per il trasporto di non più di 8 persone oltre al conducente. |
-| **BE** | **18 anni** | Complessi di veicoli composti da una motrice di categoria B e un rimorchio o semirimorchio (massa rimorchio ≤ 3500 kg). |
-| **C1** | **18 anni** | Autoveicoli diversi da D1 e D con massa massima autorizzata > 3500 kg ma ≤ 7500 kg. Anche con rimorchio ≤ 750 kg. |
-| **C1E** | **18 anni** | Complessi veicoli C1 + rimorchio > 750 kg (massa complessa ≤ 12000 kg). |
-| **C** | **21 anni** | Autoveicoli diversi da D1 e D con massa massima autorizzata > 3500 kg. Anche con rimorchio ≤ 750 kg. |
-| **CE** | **21 anni** | Complessi veicoli C + rimorchio > 750 kg. |
-| **D1** | **21 anni** | Autoveicoli progettati per trasporto fino a 16 persone oltre al conducente, lunghezza massima 8 metri. |
-| **D1E** | **21 anni** | Complessi veicoli D1 + rimorchio > 750 kg. |
-| **D** | **24 anni** | Autoveicoli progettati per trasporto di più di 8 persone oltre al conducente. |
-| **DE** | **24 anni** | Complessi veicoli D + rimorchio > 750 kg. |
-| **KA** | **21 anni** | Certificato di Abilitazione Professionale per la guida di motoveicoli adibiti a servizio pubblico di piazza o noleggio con conducente. |
-| **KB** | **21 anni** | Certificato di Abilitazione Professionale per la guida di tassì e autovetture in servizio di noleggio con conducente. |
+# Categorie di Patente di Guida
+
+Informazioni estratte dal documento *400 - Conducenti di veicoli e documenti di guida*.
+
+## Categoria AM
+
+* **Età minima richiesta:** 14 anni.
+    * *Nota:* Fino a 16 anni è utilizzabile solo in Italia salvo che Stati UE o SEE ne riconoscano espressamente la validità (71).
+    * Il conducente che ha compiuto 16 anni può trasportare un eventuale passeggero (84).
+
+**Abilita a condurre:**
+* Ciclomotori a due ruote (cat. L1e) aventi velocità massima per costruzione non superiore a 45 km/h, motore di cilindrata inferiore o uguale a 50 cc se a combustione interna o con potenza nominale continua massima inferiore o uguale a 4 kW per i motori elettrici.
+* Ciclomotori a tre ruote (cat. L2e) aventi velocità massima per costruzione non superiore a 45 km/h, motore di cilindrata inferiore o uguale a 50 cc se ad accensione comandata o con potenza massima netta inferiore o uguale a 4 kW per gli altri motori a combustione interna oppure con potenza nominale continua massima inferiore o uguale a 4 kW per i motori elettrici.
+* Quadricicli leggeri (cat. L6e), aventi massa a vuoto non superiore a 350 kg, velocità massima per costruzione non superiore a 45 km/h, motore con cilindrata inferiore o pari a 50 cc per i motori ad accensione comandata o cilindrata inferiore o pari a 500 cc per i motori ad accensione spontanea.
+* Quad da strada leggeri (cat. L6e-A) aventi potenza nominale continua o netta massima inferiore o uguale a 4 kW.
+* Quadricicli leggeri (cat. L6e-B) aventi potenza nominale continua o netta massima inferiore o uguale a 6 kW (70).
+
+*Nota:* Qualsiasi altra categoria di patente è valida per condurre veicoli della categoria AM (73).
+
+---
+
+## Categoria A1
+
+* **Età minima richiesta:** 16 anni.
+    * È consentito il trasporto di un eventuale passeggero (84).
+
+**Abilita a condurre (57):**
+* Motocicli senza carrozzetta (cat. L3e) o con carrozzetta (cat. L4e), aventi cilindrata massima di 125 cc, potenza non superiore a 11 kW e rapporto potenza/peso (81) non superiore a 0,1 kW/kg.
+* Tricicli (cat. L5e) di potenza non superiore a 15 kW.
+* Macchine agricole (82) o loro complessi che non superino i limiti di sagoma e di massa stabiliti dall'art. 53, comma 4, CDS (76), ovvero:
+    * larghezza: 1,60 m
+    * lunghezza: 4 m
+    * altezza: 2,50 m
+    * massa complessiva a pieno carico: 2,5 t
+    * velocità: 40 km/h.
+
+*Abilita a condurre anche veicoli della categoria AM.*
+
+---
+
+## Categoria A2
+
+* **Età minima richiesta:** 18 anni.
+
+**Abilita a condurre (58):**
+* Motocicli senza carrozzetta (cat. L3e) o con carrozzetta (cat. L4e), aventi potenza non superiore a 35 kW, rapporto potenza/peso non superiore a 0,2 kW/kg, e che non siano derivati da una versione che sviluppa oltre il doppio della potenza massima consentita (cioè 70 kW) (59).
+
+*Nota:* Può essere conseguita dal titolare di categoria A1 da almeno due anni, senza sostenere esame di guida, a seguito di frequenza, presso un'autoscuola, di apposito corso formazione (114).
+
+*Abilita a condurre anche veicoli delle categorie AM, A1.*
+
+---
+
+## Categoria A
+
+* **Età minima richiesta:**
+    * 20 anni, se si è titolari della categoria A2 da almeno 2 anni.
+    * 24 anni (accesso diretto).
+
+**Abilita a condurre (58):**
+* Tutti i motocicli, senza carrozzetta (cat. L3e) o con carrozzetta (cat. L4e) (60).
+* Tricicli (cat L5e) di potenza superiore a 15 kW (occorre un'età minima di 21 anni).
+
+*Nota:* Può essere conseguita dal titolare di categoria A2 da almeno due anni, senza sostenere esame di guida, a seguito di frequenza, presso un'autoscuola, di apposito corso di formazione (114).
+
+*Abilita a condurre anche veicoli delle categorie AM, A1, A2.*
+
+---
+
+## Categoria B1
+
+* **Età minima richiesta:** 16 anni.
+    * È consentito il trasporto di un eventuale passeggero (84).
+
+**Abilita a condurre (72):**
+* Quadricicli non leggeri (cat. L7e), aventi massa a vuoto non superiore a 400 kg (550 kg per veicoli destinati al trasporto merci), esclusa la massa delle batterie per i veicoli elettrici, potenza massima non superiore a 15 kW.
+
+*Abilita a condurre anche veicoli della categoria AM.*
+
+---
+
+## Categoria B
+
+* **Età minima richiesta:** 18 anni.
+
+**Abilita a condurre (61):**
+* Autoveicoli di massa massima autorizzata non superiore a 3.500 kg, destinati al trasporto di non più di 8 persone oltre al conducente.
+* Autoveicoli senza rimorchio adibiti al trasporto di merci, alimentati con combustibili alternativi (112), con massa superiore a 3500 kg ma non superiore a 4250 kg (dovuta all'eccesso di massa del sistema di propulsione), a condizione che la patente sia conseguita da almeno due anni (113).
+* Autotreni costituiti da motrice max 3.500 kg e rimorchio max 750 kg.
+* Autotreni costituiti da motrice max 3.500 kg e rimorchio > 750 kg, purché la massa massima del complesso non superi 4.250 kg.
+    * *Nota:* Se il complesso supera 3.500 kg, è richiesta la patente B con codice UE armonizzato "96".
+* Macchine agricole e loro complessi, comprese quelle eccezionali.
+* Macchine operatrici, escluse quelle eccezionali.
+* **Solo in Italia:**
+    * Veicoli della categoria A1 (125 cc, 11 kW).
+    * Tricicli di potenza superiore a 15 kW (occorre età minima di 21 anni).
+
+*Abilita a condurre anche veicoli delle categorie AM, B1.*
+
+---
+
+## Categoria BE
+
+* **Età minima richiesta:** 18 anni.
+
+**Abilita a condurre:**
+* Complessi di veicoli composti da una motrice della categoria B e da un rimorchio o semirimorchio la cui massa massima autorizzata non supera 3.500 kg (massa massima del complesso ≤ 7.000 kg).
+* Trenini turistici con numero di passeggeri trasportabili uguale o inferiore a 8 (62).
+
+*Abilita a condurre anche veicoli delle categorie AM, B1, B.*
+
+---
+
+## Categoria C1
+
+* **Età minima richiesta:** 18 anni.
+
+**Abilita a condurre:**
+* Autoveicoli (diversi da D1 e D) aventi massa > 3.500 kg ma non superiore a 7.500 kg, destinati al trasporto di non più di 8 persone oltre al conducente (69).
+* Autoveicoli di cui sopra trainanti un rimorchio di massa non superiore a 750 kg.
+* Macchine operatrici eccezionali.
+
+*Abilita a condurre anche veicoli delle categorie AM, B1, B.*
+
+---
+
+## Categoria C1E
+
+* **Età minima richiesta:** 18 anni.
+
+**Abilita a condurre:**
+* Complessi: motrice C1 + rimorchio > 750 kg (massa complesso ≤ 12.000 kg).
+* Complessi: motrice B + rimorchio > 3.500 kg (massa complesso ≤ 12.000 kg).
+
+*Abilita a condurre anche veicoli delle categorie AM, B1, B, BE.*
+
+---
+
+## Categoria C
+
+* **Età minima richiesta:** 21 anni (18 anni se titolare di CQC cose).
+
+**Abilita a condurre:**
+* Tutti gli autoveicoli (diversi da D1 e D) con massa > 3.500 kg, max 8 persone oltre conducente.
+* Autoveicoli di cui sopra trainanti un rimorchio max 750 kg.
+
+*Abilita a condurre anche veicoli delle categorie AM, B1, B, C1.*
+
+---
+
+## Categoria CE
+
+* **Età minima richiesta:** 21 anni (18 anni se titolare di CQC cose).
+
+**Abilita a condurre:**
+* Complessi: motrice C + rimorchio > 750 kg (83).
+
+*Limitazioni:* I titolari > 65 anni non possono guidare autotreni/autoarticolati > 20 t (elevabile fino a 68 anni con attestato CML).
+
+*Abilita a condurre anche veicoli delle categorie AM, B1, B, BE, C1E e DE (se titolare di D).*
+
+---
+
+## Categoria D1
+
+* **Età minima richiesta:** 21 anni.
+
+**Abilita a condurre:**
+* Autoveicoli per trasporto max 16 persone (+ conducente), lunghezza max 8 metri.
+* Autoveicoli di cui sopra trainanti rimorchio max 750 kg.
+
+*Abilita a condurre anche veicoli delle categorie AM, B1, B.*
+
+---
+
+## Categoria D1E
+
+* **Età minima richiesta:** 21 anni.
+
+**Abilita a condurre:**
+* Complessi: motrice D1 + rimorchio > 750 kg.
+
+*Abilita a condurre anche veicoli delle categorie AM, B1, B, BE.*
+
+---
+
+## Categoria D
+
+* **Età minima richiesta:** 24 anni (21 anni se titolare di CQC persone).
+
+**Abilita a condurre (63):**
+* Tutti gli autoveicoli destinati al trasporto di più di 8 persone oltre al conducente.
+* Autoveicoli di cui sopra trainanti un rimorchio max 750 kg.
+
+*Abilita a condurre anche veicoli delle categorie AM, B1, B, D1.*
+
+---
+
+## Categoria DE
+
+* **Età minima richiesta:** 24 anni (21 anni se titolare di CQC persone).
+
+**Abilita a condurre (64):**
+* Complessi: motrice D + rimorchio > 750 kg.
+* Trenini turistici > 8 posti.
+* Autosnodati (con troncone trainato > 750 kg) (80).
+
+*Abilita a condurre anche veicoli delle categorie AM, B1, B, BE, D1E.*
