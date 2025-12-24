@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { useApp } from '../../context/AppContext';
 import { NavLink } from 'react-router-dom';
 import { ResetConfirmationButton } from './ResetConfirmationButton';
+import { APP_VERSION } from '../../version';
 
 export const Sidebar: React.FC = () => {
   const { isSidebarOpen, toggleSidebar } = useApp();
@@ -99,7 +100,7 @@ export const Sidebar: React.FC = () => {
           />
 
           <p className="text-xs text-center text-slate-400 font-medium">
-            PatenteOK v2.4.10<br />© 2025
+            PatenteOK {APP_VERSION}<br />© 2025
           </p>
         </div>
       </div>

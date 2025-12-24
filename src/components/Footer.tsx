@@ -1,10 +1,9 @@
 
 import React from 'react';
-import packageJson from '../../package.json';
+import { APP_VERSION } from '../version';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
-  const appVersion = packageJson.version;
 
   return (
     // Aggiunto pb-32 per compensare l'altezza del bottone fisso in basso e l'area sicura
@@ -24,7 +23,7 @@ const Footer: React.FC = () => {
             © {currentYear} PatenteOK. Tutti i diritti riservati.
           </p>
           <p className="text-[10px] text-slate-500 dark:text-slate-400 font-mono">
-            v{appVersion}-beta
+            {APP_VERSION}
           </p>
         </div>
       </div>

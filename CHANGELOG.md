@@ -1,6 +1,9 @@
 
 # Changelog
 
+### Bug Fix: Version Sync
+Risolta discrepanza di versione tra footer della Home e menu laterale.
+
 ## [2.4.14] - 2025-12-24
 ### New Feature: Quick Reset
 Aggiunta scorciatoia per il reset nella barra di navigazione in alto.
