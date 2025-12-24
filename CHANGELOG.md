@@ -4,6 +4,12 @@
 ### Bug Fix: Version Sync
 Risolta discrepanza di versione tra footer della Home e menu laterale.
 
+## [2.4.17] - 2025-12-24
+### Feature: Rich Text Rendering
+Migliorata la visualizzazione delle informazioni patente:
+- Supporto per **Citazioni** (Blockquotes) per note importanti.
+- Supporto per *Corsivo* e Liste avanzate.
+
 ## [2.4.16] - 2025-12-24
 ### Bug Fix: License Info Display
 - Riabilitata visualizzazione Categoria A (supporto regole multi-riga).
