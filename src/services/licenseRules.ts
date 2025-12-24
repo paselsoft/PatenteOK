@@ -46,7 +46,7 @@ export const parseLicenseMarkdown = (markdown: string): LicenseRule[] => {
 
             // Colonna 3: Descrizione (pulizia citazioni)
             // Rimuove [cite_start]...[cite: ...]
-            let description = columns[2]
+            const description = columns[2]
                 .replace(/\[cite_start\]/g, '')
                 .replace(/\[cite:.*?\]/g, '')
                 .trim();

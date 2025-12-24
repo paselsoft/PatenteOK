@@ -5,12 +5,13 @@
 
 interface ErrorDetails {
   componentStack?: string;
-  [key: string]: any;
+  [key: string]: unknown;
 }
 
 export const logError = (error: Error, details?: ErrorDetails) => {
   // In ambiente di sviluppo, logga in console con formattazione
   // Fix: Property 'env' does not exist on type 'ImportMeta'. Using type assertion for Vite env.
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const isDev = (import.meta as any).env?.DEV;
 
   if (isDev) {

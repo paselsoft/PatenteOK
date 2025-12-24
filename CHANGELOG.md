@@ -1,6 +1,25 @@
 
 # Changelog
 
+## [2.4.0] - 2025-12-24
+### Engineering: CI/CD & Testing
+Migliorata significativamente la pipeline di sviluppo e la copertura dei test per garantire stabilità a lungo termine.
+
+### Improvements
+- **CI/CD Pipeline**:
+  - Abilitato il **Linting** (controllo qualità codice) nella pipeline GitHub Actions.
+  - Aggiunta la matrice di test per supportare **Node.js 20.x** (oltre alla 18.x).
+- **Code Quality**:
+  - Risolti tutti gli errori e warning di linting nel codebase (`errorLogging`, `useLocalStorage`, `AppContext`).
+  - Standardizzazione variabili (`let` -> `const` dove possibile).
+
+### Testing
+- **New Unit Tests**:
+  - **Service Layer**: Aggiunta suite di test completa (8 test) per `LicenseRulesService` per validare robustamente il parsing delle regole patente.
+  - **UI Components**: Aggiunta suite di test (6 test) per `DocumentList` per verificare rendering, interazioni e logica condizionale.
+  - **State Management**: Aggiunti 4 nuovi scenari complessi a `AppContext` (10 test totali) coprendo cittadini UE, combinazioni di flag (Minore + Extra UE) e persistenza stato.
+- **Coverage**: Aumentata la copertura sui path critici dell'applicazione.
+
 ## [2.3.12] - 2025-12-24
 ### UI Polish
 - **Footer**: Migliorata la leggibilità del numero di versione in modalità chiara (aumentato il contrasto).

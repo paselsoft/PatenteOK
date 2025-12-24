@@ -46,7 +46,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   useEffect(() => {
     setDocuments(prevDocs => {
       // 1. Calcola la struttura documenti attesa basata sul profilo
-      let expectedDocs = [...INITIAL_DOCUMENTS];
+      const expectedDocs = [...INITIAL_DOCUMENTS];
 
       const idDocIndex = expectedDocs.findIndex(d => d.id === DOCUMENT_IDS.IDENTITY_DOCS);
 
@@ -114,6 +114,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   );
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useApp = () => {
   const context = useContext(AppContext);
   if (!context) {
