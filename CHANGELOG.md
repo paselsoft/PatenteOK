@@ -1,6 +1,13 @@
 
 # Changelog
 
+## [2.4.7] - 2025-12-24
+### UX Improvement: Home Page Anxiety Reduction
+Rimosso il link di prenotazione prematuro dalla Home Page per guidare meglio l'utente.
+
+### Improvements
+- **Home Page**: Sostituito l'avviso di prenotazione immediata con un messaggio rassicurante ("Prima prepariamo i documenti..."). Il link per prenotare è disponibile al passaggio finale (Ufficio), evitando confusione o ansia da prestazione per i nuovi utenti.
+
 ## [2.4.6] - 2025-12-24
 ### Enhancement: Extra UE Residence Rules
 Aggiornata la guida Extra-UE con la normativa dettagliata sul soggiorno.
