@@ -131,7 +131,11 @@ const ProfileSection: React.FC = () => {
         />
         <Toggle
           label="Presentazione con Delega"
-          description="Se il candidato non può venire allo sportello (es. tramite Agenzia o parente)"
+          description={
+            profile.isMinor
+              ? "Se il genitore/tutore delegato non può venire allo sportello e incarica un'altra persona"
+              : "Se il candidato non può venire allo sportello (es. tramite Agenzia o parente)"
+          }
           checked={profile.isDelegated}
           onChange={(checked) => updateProfile({ isDelegated: checked })}
         />

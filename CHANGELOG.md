@@ -1,6 +1,16 @@
 
 # Changelog
 
+## [2.4.2] - 2025-12-24
+### UX Enhancement: Wording
+Migliorata la chiarezza delle descrizioni opzionali nella configurazione profilo.
+
+### Improvements
+- **Profile Page**: La descrizione dell'opzione "Presentazione con Delega" ora si adatta dinamicamente:
+  - **Adulto**: "Se il candidato non può venire allo sportello..."
+  - **Minorenne**: "Se il genitore/tutore delegato non può venire allo sportello e incarica un'altra persona"
+  Questo chiarisce che per i minori la delega si intende dal genitore verso terzi, non dal candidato.
+
 ## [2.4.1] - 2025-12-24
 ### Hotfix: Validation Blocking
 Risolta una criticità nella validazione dei requisiti d'età che permetteva di proseguire anche con configurazioni non valide.
