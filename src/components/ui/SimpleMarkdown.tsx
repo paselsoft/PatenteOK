@@ -28,7 +28,7 @@ export const SimpleMarkdown: React.FC<SimpleMarkdownProps> = ({ content }) => {
         }
     };
 
-    lines.forEach((line, index) => {
+    lines.forEach((line) => {
         const trimmed = line.trim();
 
         // Empty line -> flush list

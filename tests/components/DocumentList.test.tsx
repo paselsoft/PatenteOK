@@ -78,7 +78,7 @@ describe('DocumentList Component', () => {
         render(<DocumentList />);
 
         // Trova tutti i bottoni check. Il primo corrisponde a 'doc1'
-        const checkButtons = screen.getAllByRole('button');
+        screen.getAllByRole('button');
         // Nota: DocumentList ha bottoni per check e bottoni interni per download.
         // I check button hanno classe w-5 h-5.
         // Un selettore più preciso sarebbe meglio, ma per ora usiamo l'ordine o una query specifica.
