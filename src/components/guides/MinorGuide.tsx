@@ -3,12 +3,12 @@ import React from 'react';
 import { GuideStep } from '../ui/GuideStep';
 import { Button } from '../ui/Button';
 import { GuideContainer } from '../ui/GuideContainer';
-import { CITIZENSHIP, LICENSE_CATEGORIES } from '../../types';
+import { CITIZENSHIP, LICENSE_CATEGORIES, Citizenship, LicenseCategory } from '../../types';
 
 interface MinorGuideProps {
    onComplete: () => void;
-   citizenship?: string;
-   licenseCategory?: string;
+   citizenship?: Citizenship | null;
+   licenseCategory?: LicenseCategory | null;
 }
 
 export const MinorGuide: React.FC<MinorGuideProps> = ({ onComplete, citizenship, licenseCategory }) => {

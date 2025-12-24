@@ -1,6 +1,6 @@
 
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import { DocumentItem, ProfileInfo, CITIZENSHIP, LICENSE_CATEGORIES } from '../types';
+import { DocumentItem, ProfileInfo, CITIZENSHIP } from '../types';
 import { useLocalStorage } from '../hooks/useLocalStorage';
 import {
   DOCUMENT_IDS,
@@ -27,8 +27,8 @@ const AppContext = createContext<AppContextType | null>(null);
 export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   // Persistenza Profilo
   const [profile, setProfile] = useLocalStorage<ProfileInfo>('patenteok-profile', {
-    citizenship: CITIZENSHIP.ITALIAN,
-    licenseCategory: LICENSE_CATEGORIES.AM,
+    citizenship: null,
+    licenseCategory: null,
     isMinor: false,
     isDelegated: false,
     isAppointmentBooked: false,

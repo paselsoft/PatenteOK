@@ -11,6 +11,7 @@ const ProfileSection: React.FC = () => {
   const { getRuleForCategory } = useLicenseRules();
 
   const currentRule = useMemo(() => {
+    if (!profile.licenseCategory) return null;
     return getRuleForCategory(profile.licenseCategory);
   }, [profile.licenseCategory, getRuleForCategory]);
 
@@ -22,10 +23,11 @@ const ProfileSection: React.FC = () => {
         <div className="relative group">
           <select
             id="citizenship-select"
-            value={profile.citizenship}
+            value={profile.citizenship || ''}
             onChange={(e) => updateProfile({ citizenship: e.target.value as Citizenship })}
             className="w-full bg-slate-50 dark:bg-slate-950 border-slate-200 dark:border-slate-800 rounded-xl py-3 px-4 text-[15px] font-semibold text-slate-800 dark:text-slate-100 focus:ring-primary focus:border-primary appearance-none cursor-pointer"
           >
+            <option value="" disabled>Seleziona cittadinanza...</option>
             <option value={CITIZENSHIP.ITALIAN}>Italiana</option>
             <option value={CITIZENSHIP.EU}>Unione Europea</option>
             <option value={CITIZENSHIP.EXTRA_EU}>Extra UE</option>
@@ -40,10 +42,11 @@ const ProfileSection: React.FC = () => {
         <div className="relative group">
           <select
             id="license-category-select"
-            value={profile.licenseCategory}
+            value={profile.licenseCategory || ''}
             onChange={(e) => updateProfile({ licenseCategory: e.target.value as LicenseCategory })}
             className="w-full bg-slate-50 dark:bg-slate-950 border-slate-200 dark:border-slate-800 rounded-xl py-3 px-4 text-[15px] font-semibold text-slate-800 dark:text-slate-100 focus:ring-primary focus:border-primary appearance-none cursor-pointer"
           >
+            <option value="" disabled>Seleziona categoria...</option>
             <optgroup label="Ciclomotori e Motocicli">
               <option value={LICENSE_CATEGORIES.AM}>AM - Ciclomotore (2/3 ruote o quadriciclo)</option>
               <option value={LICENSE_CATEGORIES.A1}>A1 - Motocicli leggeri (125cc)</option>

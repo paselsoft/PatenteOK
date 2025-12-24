@@ -52,8 +52,8 @@ export interface DocumentItem {
 }
 
 export interface ProfileInfo {
-  citizenship: Citizenship;
-  licenseCategory: LicenseCategory;
+  citizenship: Citizenship | null;
+  licenseCategory: LicenseCategory | null;
   isMinor: boolean;
   isDelegated: boolean;
   isAppointmentBooked?: boolean;

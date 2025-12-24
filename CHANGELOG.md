@@ -1,6 +1,16 @@
 
 # Changelog
 
+## [2.4.8] - 2025-12-24
+### Feature: Sequential Step Enforcement
+Implementato il blocco sequenziale dei passaggi per guidare l'utente nell'ordine corretto.
+
+### Improvements
+- **Step Locking**: "Raccolta Documenti" (Passo 2) è ora bloccato finché non viene completato il Profilo (Passo 1).
+- **Step Locking**: "Consegna allo Sportello" (Passo 3) è bloccato finché non vengono completati tutti i documenti (Passo 2).
+- **Default State**: Il profilo inizia ora come "non selezionato" per forzare una scelta consapevole dell'utente.
+- **UI**: Aggiunto stato visivo "Bloccato" (grigio, lucchetto) per i passaggi non ancora accessibili.
+
 ## [2.4.7] - 2025-12-24
 ### UX Improvement: Home Page Anxiety Reduction
 Rimosso il link di prenotazione prematuro dalla Home Page per guidare meglio l'utente.
