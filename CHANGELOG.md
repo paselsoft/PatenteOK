@@ -4,6 +4,12 @@
 ### Bug Fix: Version Sync
 Risolta discrepanza di versione tra footer della Home e menu laterale.
 
+## [2.4.18] - 2025-12-24
+### Bug Fix: Markdown Renderer
+Migliorato il motore di rendering testo per gestire correttamente:
+- Liste che seguono immediatamente un testo o un titolo.
+- Formattazione complessa (corsivo/grassetto) dentro le liste.
+
 ## [2.4.17] - 2025-12-24
 ### Feature: Rich Text Rendering
 Migliorata la visualizzazione delle informazioni patente:
