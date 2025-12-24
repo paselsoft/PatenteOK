@@ -1,6 +1,13 @@
 
 # Changelog
 
+## [2.4.13] - 2025-12-24
+### UX Improvement: Safer Reset
+Migliorata esperienza di reset dell'applicazione.
+
+### Improvements
+- **Sidebar**: Il pulsante "Reset Dati App" ora utilizza un meccanismo di doppia conferma interno all'interfaccia invece del popup nativo del browser. Questo risolve problemi di compatibilità (popup che si chiudevano da soli) ed evita che l'utente cancelli i dati per errore.
+
 ## [2.4.12] - 2025-12-24
 ### Bug Fix: Profile Validation
 Risolto bug che permetteva di avanzare con profilo incompleto.
