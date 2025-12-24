@@ -33,7 +33,7 @@ export const IdentityGuide: React.FC<IdentityGuideProps> = ({ onComplete }) => {
           <div className="bg-blue-50 text-[11px] text-blue-900 p-2 rounded border border-blue-100 flex gap-2 items-start">
             <span className="material-symbols-rounded text-[14px] mt-0.5">info</span>
             <span>
-              <strong>CIE in fase di rilascio:</strong> È valida anche la ricevuta cartacea della richiesta rilasciata dal Comune in attesa della consegna.
+              <strong>Ricevuta CIE:</strong> È valida come documento di riconoscimento (Circolare 9/2019). L'autenticità è verificabile tramite scansione del QR Code con l'app <strong>Ve.DO</strong>.
             </span>
           </div>
         </div>
@@ -48,13 +48,16 @@ export const IdentityGuide: React.FC<IdentityGuideProps> = ({ onComplete }) => {
             <span className="material-symbols-rounded text-[16px]">check</span> Passaporto
           </div>
           <div className="flex items-center gap-1.5 bg-slate-50 p-2 rounded border border-slate-100">
-            <span className="material-symbols-rounded text-[16px]">check</span> Patente (altra cat.)
-          </div>
-          <div className="flex items-center gap-1.5 bg-slate-50 p-2 rounded border border-slate-100">
-            <span className="material-symbols-rounded text-[16px]">check</span> Patente Nautica
+            <span className="material-symbols-rounded text-[16px]">check</span> Patente (guida/nautica)
           </div>
           <div className="flex items-center gap-1.5 bg-slate-50 p-2 rounded border border-slate-100">
             <span className="material-symbols-rounded text-[16px]">check</span> Porto d'Armi
+          </div>
+          <div className="flex items-center gap-1.5 bg-slate-50 p-2 rounded border border-slate-100">
+            <span className="material-symbols-rounded text-[16px]">check</span> Libretto Pensione
+          </div>
+          <div className="col-span-2 flex items-center gap-1.5 bg-slate-50 p-2 rounded border border-slate-100">
+            <span className="material-symbols-rounded text-[16px]">check</span> Patentino Termici (con foto)
           </div>
           <div className="col-span-2 flex items-center gap-1.5 bg-slate-50 p-2 rounded border border-slate-100">
             <span className="material-symbols-rounded text-[16px]">check</span> Tessere Statali (Mod. AT/BT)
@@ -75,7 +78,7 @@ export const IdentityGuide: React.FC<IdentityGuideProps> = ({ onComplete }) => {
             <p className="text-[11px] text-secondary-text">
               Identificazione tramite <strong>Passaporto</strong>.
               <br />
-              <span className="italic text-slate-500">Nota: Il Permesso di Soggiorno serve per la regolarità, il Passaporto per l'identità.</span>
+              <span className="italic text-slate-500">Nota: Il Permesso di Soggiorno attesta la regolarità, il Passaporto è necessario per l'identificazione.</span>
             </p>
           </div>
         </div>

@@ -1,6 +1,16 @@
 
 # Changelog
 
+## [2.4.5] - 2025-12-24
+### Enhancement: Identity Documents
+Ampliata la lista dei documenti di riconoscimento validi e aggiunte specifiche sulla ricevuta CIE.
+
+### Improvements
+- **Identity Guide**:
+  - Aggiunta la lista completa dei documenti equipollenti (Libretto Pensione, Patentino Termici, ecc.).
+  - Specificato che la **Ricevuta CIE** è valida e verificabile tramite l'app **Ve.DO**.
+  - Chiarita la distinzione tra Passaporto (identità) e Permesso di Soggiorno (regolarità) per i cittadini Extra-UE.
+
 ## [2.4.4] - 2025-12-24
 ### Fix: Minor Guide Content & Copy Requirements
 Risolta l'assenza di contenuti nella sezione cittadinanza e corretti i requisiti documentali per i minori.
